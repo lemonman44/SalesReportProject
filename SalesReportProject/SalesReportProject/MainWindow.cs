@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SalesReportProject
 {
-    public partial class SettingsPage : Form
+    public partial class MainWindow : Form
     {
-        public SettingsPage()
+        public MainWindow()
         {
             InitializeComponent();
         }

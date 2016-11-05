@@ -16,7 +16,7 @@ namespace SalesReportProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPage());
+            Application.Run(new MainWindow());
         }
     }
 }

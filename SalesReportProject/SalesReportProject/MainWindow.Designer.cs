@@ -1,6 +1,6 @@
 ﻿namespace SalesReportProject
 {
-    partial class PreviewDataAndSendPage
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "PreviewDataAndSendPage";
+            this.Text = "Form1";
         }
 
         #endregion
     }
 }
+
