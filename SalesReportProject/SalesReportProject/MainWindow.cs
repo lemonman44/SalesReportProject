@@ -43,8 +43,8 @@ namespace SalesReportProject
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thought out locations
-            menuToPreviewButton.Location
-                = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
+           // menuToPreviewButton.Location
+           //     = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
         }
@@ -61,7 +61,7 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
+                = new Point(ClientSize.Width - 90, ClientSize.Height - 30);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
         }
