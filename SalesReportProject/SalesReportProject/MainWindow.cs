@@ -12,7 +12,7 @@ namespace SalesReportProject
 {
     public partial class MainWindow : Form
     {
-        //The folling is a description of our layout.
+        //The following is a description of our layout.
 
         //We have one main form called MainWindow
         //We have three (as of right now) panels that are shown on the MainWindow
