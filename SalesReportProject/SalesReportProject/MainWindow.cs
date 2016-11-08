@@ -30,6 +30,8 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(emailSettingsButton.Size);
+            Console.WriteLine(emailSettingsButton.Height);
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -47,12 +49,19 @@ namespace SalesReportProject
             settingsPage.Location = new Point(0, 0);
 
             //the following code sets the locations of buttons and other controls to be more centered
-            //and looking like they're in throughout out locations
+            //and looking like they're in thoughtout out locations on the menuPage panel
             menuToPreviewButton.Location
                 = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
 
+            //the following code sets the locations of buttons and other controls to be more centered
+            //and looking like they're in thoughtout out locations on the settingsPage panel
+            emailSettingsInfo.Width = ClientSize.Width;
+            emailSettingsButton.Width = ClientSize.Width;
+            accountSettingsInfo.Width = ClientSize.Width;
+            accountsSettingsButton.Width = ClientSize.Width;
+            
         }
 
         //this section is some code that will run whenever the size of the form is changed
@@ -70,6 +79,13 @@ namespace SalesReportProject
                 = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+
+            //the following code sets the locations of buttons and other controls to be more centered
+            //and looking like they're in thoughtout out locations on the settingsPage panel
+            emailSettingsInfo.Width = ClientSize.Width;
+            emailSettingsButton.Width = ClientSize.Width;
+            accountSettingsInfo.Width = ClientSize.Width;
+            accountsSettingsButton.Width = ClientSize.Width;
         }
 
         //this section is code that runs when menuToPreviewButtonIsClicked
