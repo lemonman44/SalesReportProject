@@ -41,6 +41,11 @@ namespace SalesReportProject
             previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
 
+            //The following code sets the starting locations of the panels in the MainWindow form
+            menuPage.Location = new Point(0, 0);
+            previewAndSendDataPage.Location = new Point(0, 0);
+            settingsPage.Location = new Point(0, 0);
+
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in throughout out locations
             menuToPreviewButton.Location
@@ -81,6 +86,31 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to settings page
             menuPage.Visible = false;
             settingsPage.Visible = true;
+            Console.WriteLine(emailSettingsInfo.Location);
+            Console.WriteLine(accountSettingsInfo.Location);
+            Console.WriteLine(emailSettingsInfo.Size);
+            Console.WriteLine(accountSettingsInfo.Size);
+        }
+
+        private void emailSettingsButton_Click(object sender, EventArgs e)
+        {
+            emailSettingsButton.Enabled = false;
+            accountsSettingsButton.Enabled = true;
+
+            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
+            accountSettingsInfo.Location = new Point(0, 208);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104);
+
+        }
+
+        private void accountsSettingsButton_Click(object sender, EventArgs e)
+        {
+            accountsSettingsButton.Enabled = false;
+            emailSettingsButton.Enabled = true;
+
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 52);
+            accountSettingsInfo.Location = new Point(0, 156);
+            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104);
         }
     }     
 }
