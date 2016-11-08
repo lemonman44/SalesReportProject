@@ -112,5 +112,17 @@ namespace SalesReportProject
             accountSettingsInfo.Location = new Point(0, 156);
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            previewAndSendDataPage.Visible = false;
+            menuPage.Visible = true;
+        }
+
+        private void Settings_Back_Button_Click(object sender, EventArgs e)
+        {
+            settingsPage.Visible = false;
+            menuPage.Visible = true;
+        }
     }     
 }
