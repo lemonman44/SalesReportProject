@@ -37,16 +37,19 @@
             this.settingsLabel = new System.Windows.Forms.Label();
             this.accountsSettingsButton = new System.Windows.Forms.Button();
             this.emailSettingsButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuPage.SuspendLayout();
             this.settingsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPage
             // 
+            this.menuPage.Controls.Add(this.dataGridView1);
             this.menuPage.Controls.Add(this.menuToSettingsButton);
             this.menuPage.Controls.Add(this.menuToPreviewButton);
             this.menuPage.Location = new System.Drawing.Point(2, 0);
-            this.menuPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuPage.Margin = new System.Windows.Forms.Padding(2);
             this.menuPage.Name = "menuPage";
             this.menuPage.Size = new System.Drawing.Size(736, 483);
             this.menuPage.TabIndex = 0;
@@ -55,7 +58,7 @@
             // 
             this.menuToSettingsButton.Image = global::SalesReportProject.Properties.Resources._;
             this.menuToSettingsButton.Location = new System.Drawing.Point(705, 2);
-            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
             this.menuToSettingsButton.Size = new System.Drawing.Size(30, 31);
             this.menuToSettingsButton.TabIndex = 1;
@@ -65,7 +68,7 @@
             // menuToPreviewButton
             // 
             this.menuToPreviewButton.Location = new System.Drawing.Point(318, 287);
-            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
             this.menuToPreviewButton.Size = new System.Drawing.Size(100, 52);
             this.menuToPreviewButton.TabIndex = 0;
@@ -75,8 +78,9 @@
             // 
             // previewAndSendDataPage
             // 
+            this.previewAndSendDataPage.Controls.Add(this.dataGridView1);
             this.previewAndSendDataPage.Location = new System.Drawing.Point(0, 0);
-            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(2);
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
             this.previewAndSendDataPage.Size = new System.Drawing.Size(736, 483);
             this.previewAndSendDataPage.TabIndex = 0;
@@ -88,7 +92,7 @@
             this.settingsPage.Controls.Add(this.accountsSettingsButton);
             this.settingsPage.Controls.Add(this.emailSettingsButton);
             this.settingsPage.Location = new System.Drawing.Point(0, 0);
-            this.settingsPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsPage.Margin = new System.Windows.Forms.Padding(2);
             this.settingsPage.Name = "settingsPage";
             this.settingsPage.Size = new System.Drawing.Size(736, 483);
             this.settingsPage.TabIndex = 0;
@@ -96,7 +100,7 @@
             // emailSettingsInfo
             // 
             this.emailSettingsInfo.Location = new System.Drawing.Point(0, 0);
-            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(2);
             this.emailSettingsInfo.Name = "emailSettingsInfo";
             this.emailSettingsInfo.Size = new System.Drawing.Size(100, 52);
             this.emailSettingsInfo.TabIndex = 1;
@@ -114,7 +118,7 @@
             // accountsSettingsButton
             // 
             this.accountsSettingsButton.Location = new System.Drawing.Point(0, 156);
-            this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.accountsSettingsButton.Name = "accountsSettingsButton";
             this.accountsSettingsButton.Size = new System.Drawing.Size(736, 52);
             this.accountsSettingsButton.TabIndex = 2;
@@ -124,12 +128,20 @@
             // emailSettingsButton
             // 
             this.emailSettingsButton.Location = new System.Drawing.Point(0, 104);
-            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.emailSettingsButton.Name = "emailSettingsButton";
             this.emailSettingsButton.Size = new System.Drawing.Size(736, 52);
             this.emailSettingsButton.TabIndex = 2;
             this.emailSettingsButton.Text = "Email";
             this.emailSettingsButton.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(100, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 2;
             // 
             // MainWindow
             // 
@@ -139,7 +151,7 @@
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
             this.Controls.Add(this.settingsPage);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -147,6 +159,7 @@
             this.menuPage.ResumeLayout(false);
             this.settingsPage.ResumeLayout(false);
             this.settingsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,6 +175,7 @@
         private System.Windows.Forms.Button accountsSettingsButton;
         private System.Windows.Forms.Label settingsLabel;
         private System.Windows.Forms.Panel emailSettingsInfo;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

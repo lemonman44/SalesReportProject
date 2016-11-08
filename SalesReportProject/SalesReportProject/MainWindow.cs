@@ -42,11 +42,12 @@ namespace SalesReportProject
             settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
 
             //the following code sets the locations of buttons and other controls to be more centered
-            //and looking like they're in thought out locations
+            //and looking like they're in throughout out locations
             menuToPreviewButton.Location
                 = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+
         }
 
         //this section is some code that will run whenever the size of the form is changed
@@ -81,5 +82,5 @@ namespace SalesReportProject
             menuPage.Visible = false;
             settingsPage.Visible = true;
         }
-    }
+    }     
 }
