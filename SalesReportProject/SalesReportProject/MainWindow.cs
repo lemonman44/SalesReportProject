@@ -85,17 +85,15 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to settings page
             menuPage.Visible = false;
             settingsPage.Visible = true;
-            Console.WriteLine(emailSettingsInfo.Location);
-            Console.WriteLine(accountSettingsInfo.Location);
-            Console.WriteLine(emailSettingsInfo.Size);
-            Console.WriteLine(accountSettingsInfo.Size);
         }
 
         private void emailSettingsButton_Click(object sender, EventArgs e)
         {
+            //makes sure you dont click on a thing twice
             emailSettingsButton.Enabled = false;
             accountsSettingsButton.Enabled = true;
 
+            //moves the other locations to where they need to be
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
             accountSettingsInfo.Location = new Point(0, 208);
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104);
@@ -104,9 +102,11 @@ namespace SalesReportProject
 
         private void accountsSettingsButton_Click(object sender, EventArgs e)
         {
+            //makes sure you dont click on a thing twice
             accountsSettingsButton.Enabled = false;
             emailSettingsButton.Enabled = true;
 
+            //moves the other locations to where they need to be
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 52);
             accountSettingsInfo.Location = new Point(0, 156);
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104);
