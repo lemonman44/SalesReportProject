@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.menuPage = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuToSettingsButton = new System.Windows.Forms.Button();
             this.menuToPreviewButton = new System.Windows.Forms.Button();
             this.previewAndSendDataPage = new System.Windows.Forms.Panel();
             this.settingsPage = new System.Windows.Forms.Panel();
             this.emailSettingsInfo = new System.Windows.Forms.Panel();
             this.emailSettingsButton = new System.Windows.Forms.Button();
-            this.accountSettingsInfo = new System.Windows.Forms.Panel();
-            this.accountsSettingsButton = new System.Windows.Forms.Button();
-            this.settingsLabel = new System.Windows.Forms.Label();
             this.menuPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.previewAndSendDataPage.SuspendLayout();
             this.settingsPage.SuspendLayout();
             this.emailSettingsInfo.SuspendLayout();
             this.accountSettingsInfo.SuspendLayout();
@@ -48,14 +48,53 @@
             // 
             this.menuPage.Controls.Add(this.menuToSettingsButton);
             this.menuPage.Controls.Add(this.menuToPreviewButton);
-            this.menuPage.Location = new System.Drawing.Point(3, 0);
+            this.menuPage.Location = new System.Drawing.Point(2, 0);
+            this.menuPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuPage.Name = "menuPage";
             this.menuPage.Size = new System.Drawing.Size(741, 453);
             this.menuPage.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27});
+            this.dataGridView1.Location = new System.Drawing.Point(100, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // menuToSettingsButton
             // 
-            this.menuToSettingsButton.Location = new System.Drawing.Point(1410, 3);
+            this.menuToSettingsButton.Image = global::SalesReportProject.Properties.Resources._;
+            this.menuToSettingsButton.Location = new System.Drawing.Point(705, 2);
+            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
             this.menuToSettingsButton.Size = new System.Drawing.Size(60, 60);
             this.menuToSettingsButton.TabIndex = 1;
@@ -64,7 +103,8 @@
             // 
             // menuToPreviewButton
             // 
-            this.menuToPreviewButton.Location = new System.Drawing.Point(636, 551);
+            this.menuToPreviewButton.Location = new System.Drawing.Point(318, 287);
+            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
             this.menuToPreviewButton.Size = new System.Drawing.Size(200, 100);
             this.menuToPreviewButton.TabIndex = 0;
@@ -74,7 +114,8 @@
             // 
             // previewAndSendDataPage
             // 
-            this.previewAndSendDataPage.Location = new System.Drawing.Point(3, 459);
+            this.previewAndSendDataPage.Location = new System.Drawing.Point(0, 0);
+            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
             this.previewAndSendDataPage.Size = new System.Drawing.Size(741, 453);
             this.previewAndSendDataPage.TabIndex = 0;
@@ -84,15 +125,18 @@
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
             this.settingsPage.Controls.Add(this.accountSettingsInfo);
             this.settingsPage.Controls.Add(this.settingsLabel);
-            this.settingsPage.Location = new System.Drawing.Point(750, 3);
+            this.settingsPage.Controls.Add(this.accountsSettingsButton);
+            this.settingsPage.Controls.Add(this.emailSettingsButton);
+            this.settingsPage.Location = new System.Drawing.Point(0, 0);
+            this.settingsPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.settingsPage.Name = "settingsPage";
             this.settingsPage.Size = new System.Drawing.Size(744, 453);
             this.settingsPage.TabIndex = 0;
             // 
             // emailSettingsInfo
             // 
-            this.emailSettingsInfo.Controls.Add(this.emailSettingsButton);
-            this.emailSettingsInfo.Location = new System.Drawing.Point(0, 200);
+            this.emailSettingsInfo.Location = new System.Drawing.Point(0, 0);
+            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailSettingsInfo.Name = "emailSettingsInfo";
             this.emailSettingsInfo.Size = new System.Drawing.Size(1473, 100);
             this.emailSettingsInfo.TabIndex = 1;
@@ -117,7 +161,8 @@
             // 
             // accountsSettingsButton
             // 
-            this.accountsSettingsButton.Location = new System.Drawing.Point(0, 0);
+            this.accountsSettingsButton.Location = new System.Drawing.Point(0, 156);
+            this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.accountsSettingsButton.Name = "accountsSettingsButton";
             this.accountsSettingsButton.Size = new System.Drawing.Size(1473, 100);
             this.accountsSettingsButton.TabIndex = 2;
@@ -127,12 +172,148 @@
             // 
             // settingsLabel
             // 
-            this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Location = new System.Drawing.Point(0, 0);
-            this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(90, 25);
-            this.settingsLabel.TabIndex = 2;
-            this.settingsLabel.Text = "Settings";
+            this.emailSettingsButton.Location = new System.Drawing.Point(0, 104);
+            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailSettingsButton.Name = "emailSettingsButton";
+            this.emailSettingsButton.Size = new System.Drawing.Size(736, 52);
+            this.emailSettingsButton.TabIndex = 2;
+            this.emailSettingsButton.Text = "Email";
+            this.emailSettingsButton.UseVisualStyleBackColor = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Column12";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Column13";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Column14";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Column15";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Column16";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Column17";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Column18";
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Column19";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Column20";
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Column21";
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Column22";
+            this.Column22.Name = "Column22";
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Column23";
+            this.Column23.Name = "Column23";
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "Column24";
+            this.Column24.Name = "Column24";
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Column25";
+            this.Column25.Name = "Column25";
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "Column26";
+            this.Column26.Name = "Column26";
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "Column27";
+            this.Column27.Name = "Column27";
             // 
             // MainWindow
             // 
@@ -142,11 +323,15 @@
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
+            this.Controls.Add(this.settingsPage);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.menuPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.previewAndSendDataPage.ResumeLayout(false);
             this.settingsPage.ResumeLayout(false);
             this.settingsPage.PerformLayout();
             this.ResumeLayout(false);
@@ -164,7 +349,6 @@
         private System.Windows.Forms.Button accountsSettingsButton;
         private System.Windows.Forms.Label settingsLabel;
         private System.Windows.Forms.Panel emailSettingsInfo;
-        private System.Windows.Forms.Panel accountSettingsInfo;
     }
 }
 
