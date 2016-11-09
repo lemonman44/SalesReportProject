@@ -147,9 +147,15 @@ namespace SalesReportProject
             menuPage.Visible = true;
         }
 
-        private void menuPage_Paint(object sender, PaintEventArgs e)
+        /*
+        private void Images(object sender, EventArgs e)
         {
-
+            PictureBox logo = new PictureBox();
+            logo.Image = Image.FromFile("SOR-logo2.png");
+            logo.Location = new Point(360, 100);
+            logo.Size = new Size(385, 110);
+            this.Controls.Add(logo);
         }
+        */
     }     
 }
