@@ -30,8 +30,6 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(emailSettingsButton.Size);
-            Console.WriteLine(emailSettingsButton.Height);
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -112,8 +110,8 @@ namespace SalesReportProject
 
             //moves the other locations to where they need to be
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
-            accountSettingsInfo.Location = new Point(0, 208);
-            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104);
+            accountSettingsInfo.Location = new Point(0, 208 + 104);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104);
 
         }
 
@@ -126,7 +124,7 @@ namespace SalesReportProject
             //moves the other locations to where they need to be
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 52);
             accountSettingsInfo.Location = new Point(0, 156);
-            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104);
+            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104 + 104);
         }
 
         private void Preview_Back_Button_Click(object sender, EventArgs e)
