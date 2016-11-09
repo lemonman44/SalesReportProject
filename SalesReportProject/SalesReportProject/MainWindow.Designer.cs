@@ -92,7 +92,7 @@
             this.menuToSettingsButton.Location = new System.Drawing.Point(705, 2);
             this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
-            this.menuToSettingsButton.Size = new System.Drawing.Size(30, 31);
+            this.menuToSettingsButton.Size = new System.Drawing.Size(30, 30);
             this.menuToSettingsButton.TabIndex = 1;
             this.menuToSettingsButton.UseVisualStyleBackColor = true;
             this.menuToSettingsButton.Click += new System.EventHandler(this.menuToSettingsButton_Click);
