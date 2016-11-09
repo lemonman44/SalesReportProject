@@ -361,7 +361,7 @@
             this.Preview_Back_Button.TabIndex = 1;
             this.Preview_Back_Button.Text = "Back";
             this.Preview_Back_Button.UseVisualStyleBackColor = true;
-            this.Preview_Back_Button.Click += new System.EventHandler(this.button1_Click);
+            this.Preview_Back_Button.Click += new System.EventHandler(this.Preview_Back_Button_Click);
             // 
             // Settings_Back_Button
             // 
