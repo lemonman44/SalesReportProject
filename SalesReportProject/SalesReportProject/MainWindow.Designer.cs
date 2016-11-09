@@ -32,6 +32,7 @@
             this.menuToSettingsButton = new System.Windows.Forms.Button();
             this.menuToPreviewButton = new System.Windows.Forms.Button();
             this.previewAndSendDataPage = new System.Windows.Forms.Panel();
+            this.Preview_Back_Button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Distributor_ID_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distributor_Customer_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,13 +62,12 @@
             this.Substitution_Indicator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GTIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.settingsPage = new System.Windows.Forms.Panel();
+            this.Settings_Back_Button = new System.Windows.Forms.Button();
             this.emailSettingsInfo = new System.Windows.Forms.Panel();
             this.emailSettingsButton = new System.Windows.Forms.Button();
             this.accountSettingsInfo = new System.Windows.Forms.Panel();
             this.accountsSettingsButton = new System.Windows.Forms.Button();
             this.settingsLabel = new System.Windows.Forms.Label();
-            this.Preview_Back_Button = new System.Windows.Forms.Button();
-            this.Settings_Back_Button = new System.Windows.Forms.Button();
             this.menuPage.SuspendLayout();
             this.previewAndSendDataPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,8 +83,9 @@
             this.menuPage.Location = new System.Drawing.Point(2, 0);
             this.menuPage.Margin = new System.Windows.Forms.Padding(2);
             this.menuPage.Name = "menuPage";
-            this.menuPage.Size = new System.Drawing.Size(370, 236);
+            this.menuPage.Size = new System.Drawing.Size(370, 499);
             this.menuPage.TabIndex = 0;
+            this.menuPage.Paint += new System.Windows.Forms.PaintEventHandler(this.menuPage_Paint);
             // 
             // menuToSettingsButton
             // 
@@ -99,10 +100,10 @@
             // 
             // menuToPreviewButton
             // 
-            this.menuToPreviewButton.Location = new System.Drawing.Point(318, 287);
+            this.menuToPreviewButton.Location = new System.Drawing.Point(856, 431);
             this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
-            this.menuToPreviewButton.Size = new System.Drawing.Size(100, 52);
+            this.menuToPreviewButton.Size = new System.Drawing.Size(80, 25);
             this.menuToPreviewButton.TabIndex = 0;
             this.menuToPreviewButton.Text = "Click Here";
             this.menuToPreviewButton.UseVisualStyleBackColor = true;
@@ -117,6 +118,16 @@
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
             this.previewAndSendDataPage.Size = new System.Drawing.Size(370, 236);
             this.previewAndSendDataPage.TabIndex = 0;
+            // 
+            // Preview_Back_Button
+            // 
+            this.Preview_Back_Button.Location = new System.Drawing.Point(4, 4);
+            this.Preview_Back_Button.Name = "Preview_Back_Button";
+            this.Preview_Back_Button.Size = new System.Drawing.Size(75, 23);
+            this.Preview_Back_Button.TabIndex = 1;
+            this.Preview_Back_Button.Text = "Back";
+            this.Preview_Back_Button.UseVisualStyleBackColor = true;
+            this.Preview_Back_Button.Click += new System.EventHandler(this.Preview_Back_Button_Click);
             // 
             // dataGridView1
             // 
@@ -303,6 +314,16 @@
             this.settingsPage.Size = new System.Drawing.Size(576, 236);
             this.settingsPage.TabIndex = 0;
             // 
+            // Settings_Back_Button
+            // 
+            this.Settings_Back_Button.Location = new System.Drawing.Point(0, 0);
+            this.Settings_Back_Button.Name = "Settings_Back_Button";
+            this.Settings_Back_Button.Size = new System.Drawing.Size(75, 23);
+            this.Settings_Back_Button.TabIndex = 4;
+            this.Settings_Back_Button.Text = "Back";
+            this.Settings_Back_Button.UseVisualStyleBackColor = true;
+            this.Settings_Back_Button.Click += new System.EventHandler(this.Settings_Back_Button_Click);
+            // 
             // emailSettingsInfo
             // 
             this.emailSettingsInfo.Controls.Add(this.emailSettingsButton);
@@ -353,34 +374,14 @@
             this.settingsLabel.TabIndex = 2;
             this.settingsLabel.Text = "Settings";
             // 
-            // Preview_Back_Button
-            // 
-            this.Preview_Back_Button.Location = new System.Drawing.Point(4, 4);
-            this.Preview_Back_Button.Name = "Preview_Back_Button";
-            this.Preview_Back_Button.Size = new System.Drawing.Size(75, 23);
-            this.Preview_Back_Button.TabIndex = 1;
-            this.Preview_Back_Button.Text = "Back";
-            this.Preview_Back_Button.UseVisualStyleBackColor = true;
-            this.Preview_Back_Button.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Settings_Back_Button
-            // 
-            this.Settings_Back_Button.Location = new System.Drawing.Point(0, 0);
-            this.Settings_Back_Button.Name = "Settings_Back_Button";
-            this.Settings_Back_Button.Size = new System.Drawing.Size(75, 23);
-            this.Settings_Back_Button.TabIndex = 4;
-            this.Settings_Back_Button.Text = "Back";
-            this.Settings_Back_Button.UseVisualStyleBackColor = true;
-            this.Settings_Back_Button.Click += new System.EventHandler(this.Settings_Back_Button_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 467);
-            this.Controls.Add(this.settingsPage);
-            this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
+            this.Controls.Add(this.menuPage);
+            this.Controls.Add(this.settingsPage);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainWindow";
             this.Text = "Form1";
