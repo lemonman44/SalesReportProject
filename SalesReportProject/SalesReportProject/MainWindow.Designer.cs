@@ -102,7 +102,7 @@
             this.menuToPreviewButton.Location = new System.Drawing.Point(318, 287);
             this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
-            this.menuToPreviewButton.Size = new System.Drawing.Size(75, 25);
+            this.menuToPreviewButton.Size = new System.Drawing.Size(75, 23);
             this.menuToPreviewButton.TabIndex = 0;
             this.menuToPreviewButton.Text = "Click Here";
             this.menuToPreviewButton.UseVisualStyleBackColor = true;
