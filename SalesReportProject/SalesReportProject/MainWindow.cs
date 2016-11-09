@@ -30,6 +30,8 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(emailSettingsButton.Size);
+            Console.WriteLine(emailSettingsButton.Height);
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -41,12 +43,25 @@ namespace SalesReportProject
             previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
 
+            //The following code sets the starting locations of the panels in the MainWindow form
+            menuPage.Location = new Point(0, 0);
+            previewAndSendDataPage.Location = new Point(0, 0);
+            settingsPage.Location = new Point(0, 0);
+
             //the following code sets the locations of buttons and other controls to be more centered
-            //and looking like they're in thought out locations
-           // menuToPreviewButton.Location
-           //     = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
+            //and looking like they're in thoughtout out locations on the menuPage panel
+            menuToPreviewButton.Location
+                = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+
+            //the following code sets the locations of buttons and other controls to be more centered
+            //and looking like they're in thoughtout out locations on the settingsPage panel
+            emailSettingsInfo.Width = ClientSize.Width;
+            emailSettingsButton.Width = ClientSize.Width;
+            accountSettingsInfo.Width = ClientSize.Width;
+            accountsSettingsButton.Width = ClientSize.Width;
+            
         }
 
         //this section is some code that will run whenever the size of the form is changed
@@ -61,9 +76,16 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width - 90, ClientSize.Height - 30);
+                = new Point(ClientSize.Width / 2 - menuToPreviewButton.Width / 2, ClientSize.Height / 2);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+
+            //the following code sets the locations of buttons and other controls to be more centered
+            //and looking like they're in thoughtout out locations on the settingsPage panel
+            emailSettingsInfo.Width = ClientSize.Width;
+            emailSettingsButton.Width = ClientSize.Width;
+            accountSettingsInfo.Width = ClientSize.Width;
+            accountsSettingsButton.Width = ClientSize.Width;
         }
 
         //this section is code that runs when menuToPreviewButtonIsClicked
@@ -81,5 +103,42 @@ namespace SalesReportProject
             menuPage.Visible = false;
             settingsPage.Visible = true;
         }
-    }
+
+        private void emailSettingsButton_Click(object sender, EventArgs e)
+        {
+            //makes sure you dont click on a thing twice
+            emailSettingsButton.Enabled = false;
+            accountsSettingsButton.Enabled = true;
+
+            //moves the other locations to where they need to be
+            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
+            accountSettingsInfo.Location = new Point(0, 208);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104);
+
+        }
+
+        private void accountsSettingsButton_Click(object sender, EventArgs e)
+        {
+            //makes sure you dont click on a thing twice
+            accountsSettingsButton.Enabled = false;
+            emailSettingsButton.Enabled = true;
+
+            //moves the other locations to where they need to be
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 52);
+            accountSettingsInfo.Location = new Point(0, 156);
+            accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            previewAndSendDataPage.Visible = false;
+            menuPage.Visible = true;
+        }
+
+        private void Settings_Back_Button_Click(object sender, EventArgs e)
+        {
+            settingsPage.Visible = false;
+            menuPage.Visible = true;
+        }
+    }     
 }
