@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,35 @@ namespace SalesReportProject
             menuPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
+
+            //the following code reads the Email_info.txt file to populate the email fields in settings
+            try
+            {
+                string lineInTheFile;
+                using (StreamReader readEmailInfoFile = new StreamReader("..\\..\\Email_info.txt"))
+                {
+                    for (int i = 0; (lineInTheFile = readEmailInfoFile.ReadLine()) != null; i++)
+                    {
+                        if (i == 0)
+                        {
+                            emailAddressField.Text = lineInTheFile;
+                        }
+                        if (i == 1)
+                        {
+                            emailPasswordField.Text = lineInTheFile;
+                        }
+                        if (i == 2)
+                        {
+                            destinationAddressField.Text = lineInTheFile;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            
 
             //The following code sets the starting locations of the panels in the MainWindow form
             menuPage.Location = new Point(0, 0);
@@ -137,6 +167,25 @@ namespace SalesReportProject
         {
             settingsPage.Visible = false;
             menuPage.Visible = true;
+        }
+
+        private void saveEmailDataButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter saveNewEmailData = new StreamWriter("..\\..\\Email_info.txt", false))
+                {
+                    saveNewEmailData.WriteLine(emailAddressField.Text);
+                    saveNewEmailData.WriteLine(emailPasswordField.Text);
+                    saveNewEmailData.Write(destinationAddressField.Text);
+                    saveNewEmailData.Close();
+                    saveNewEmailData.Dispose();
+                }
+            }
+            catch
+            {
+
+            }
         }
     }     
 }
