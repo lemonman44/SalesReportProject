@@ -346,7 +346,7 @@
             // settingsLabel
             // 
             this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Location = new System.Drawing.Point(345, 0);
+            this.settingsLabel.Location = new System.Drawing.Point(450, 0);
             this.settingsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.settingsLabel.Name = "settingsLabel";
             this.settingsLabel.Size = new System.Drawing.Size(45, 13);
