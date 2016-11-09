@@ -92,7 +92,7 @@
   <ItemGroup>
     <Content Include="Companies.txt" />
     <Content Include="Email_info.txt" />
-    <None Include="Resources\SOR-logo2.png" />
+    <None Include="Resources\SOR-logo.png" />
     <None Include="Resources\.1.png" />
     <None Include="Resources\..png" />
   </ItemGroup>
