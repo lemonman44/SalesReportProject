@@ -103,7 +103,7 @@
             this.menuToSettingsButton.Location = new System.Drawing.Point(1410, 4);
             this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
-            this.menuToSettingsButton.Size = new System.Drawing.Size(60, 60);
+            this.menuToSettingsButton.Size = new System.Drawing.Size(30, 30);
             this.menuToSettingsButton.TabIndex = 1;
             this.menuToSettingsButton.UseVisualStyleBackColor = true;
             this.menuToSettingsButton.Click += new System.EventHandler(this.menuToSettingsButton_Click);
@@ -113,7 +113,7 @@
             this.menuToPreviewButton.Location = new System.Drawing.Point(636, 552);
             this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
-            this.menuToPreviewButton.Size = new System.Drawing.Size(200, 100);
+            this.menuToPreviewButton.Size = new System.Drawing.Size(75, 23);
             this.menuToPreviewButton.TabIndex = 0;
             this.menuToPreviewButton.Text = "Click Here";
             this.menuToPreviewButton.UseVisualStyleBackColor = true;
@@ -391,8 +391,8 @@
             // settingsLabel
             // 
             this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Location = new System.Drawing.Point(690, 0);
-            this.settingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.settingsLabel.Location = new System.Drawing.Point(450, 0);
+            this.settingsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.settingsLabel.Name = "settingsLabel";
             this.settingsLabel.Size = new System.Drawing.Size(90, 25);
             this.settingsLabel.TabIndex = 2;

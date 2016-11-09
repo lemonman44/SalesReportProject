@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorPopup.Designer.cs">
+      <DependentUpon>ErrorPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ErrorPopup.resx">
+      <DependentUpon>ErrorPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +92,7 @@
   <ItemGroup>
     <Content Include="Companies.txt" />
     <Content Include="Email_info.txt" />
+    <None Include="Resources\SOR-logo2.png" />
     <None Include="Resources\.1.png" />
     <None Include="Resources\..png" />
   </ItemGroup>
