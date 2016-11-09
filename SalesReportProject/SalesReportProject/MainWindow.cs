@@ -51,7 +51,11 @@ namespace SalesReportProject
             menuToPreviewButton.Location
                  = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
             menuToSettingsButton.Location
-                = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+                = new Point(ClientSize.Width - 35, 5);
+            Preview_Back_Button.Location
+                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+            Settings_Back_Button.Location
+                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thoughtout out locations on the settingsPage panel
@@ -76,7 +80,11 @@ namespace SalesReportProject
             menuToPreviewButton.Location
                 = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
             menuToSettingsButton.Location
-                = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+                = new Point(ClientSize.Width - 35, 5);
+            Preview_Back_Button.Location
+                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+            Settings_Back_Button.Location
+                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thoughtout out locations on the settingsPage panel
