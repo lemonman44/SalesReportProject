@@ -195,6 +195,38 @@ namespace SalesReportProject
 
             }
         }
+        //adds a company account to Companies.txt
+        private void addAccountButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter saveNewAccount = new StreamWriter("..\\..\\Companies.txt", false))
+                {
+                    saveNewAccount.WriteLine(addAccountTextField.Text);
+                    addAccountTextField.Text.Replace(addAccountTextField.Text, "");
+                    saveNewAccount.Close();
+                    saveNewAccount.Dispose();
+                }
+            }
+            catch {
+
+            }
+            
+        }
+        //removes a company account from companies.txt
+        private void subtractAccountsButton_Click(object sender, EventArgs e) {
+            try
+            {
+                using (StreamWriter SubtractAccount = new StreamWriter("..\\..\\Companies.txt", false))
+                {
+
+                }
+            }
+            catch
+            {
+
+            }
+        }
 
         /*
         private void Images(object sender, EventArgs e)
