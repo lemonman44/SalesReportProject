@@ -196,7 +196,7 @@ namespace SalesReportProject
             }
         }
         //adds a company account to Companies.txt
-        private void addAccountButton_Click(object sender, EventArgs e)
+        private void addAccountsButton_Click(object sender, EventArgs e)
         {
             try
             {
