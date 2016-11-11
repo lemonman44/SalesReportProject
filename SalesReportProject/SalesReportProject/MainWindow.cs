@@ -202,10 +202,8 @@ namespace SalesReportProject
             {
                 using (StreamWriter saveNewAccount = new StreamWriter("..\\..\\Companies.txt", false))
                 {
-                    saveNewAccount.WriteLine(addAccountTextField.Text);
-                    saveNewAccount.Close();
-                    saveNewAccount.Dispose();
-                }
+                                saveNewAccount.WriteLine(addAccountTextField.Text);
+                            }
             }
             catch {
 
@@ -216,11 +214,16 @@ namespace SalesReportProject
         private void subtractAccountsButton_Click(object sender, EventArgs e) {
             try
             {
-                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", false))
+                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt"))
                 {
-                    subtractAccount.WriteLine(addAccountTextField.Text=null);
+                    using (StreamReader readCompanies = new StreamReader("..\\..\\Companies.txt"))
+                    {
+                      
+
+                     }
+                  }
+                   
                 }
-            }
             catch
             {
 
