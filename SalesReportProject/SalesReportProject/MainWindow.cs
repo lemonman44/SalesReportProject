@@ -308,7 +308,7 @@ namespace SalesReportProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-                Button[] listOfAllButtons = new Button[]
+            Button[] listOfAllButtons = new Button[]
             {
                 menuToSettingsButton,
                 Preview_Back_Button,
