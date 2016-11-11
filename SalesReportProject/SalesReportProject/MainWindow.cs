@@ -65,7 +65,7 @@ namespace SalesReportProject
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thought out locations
             menuToPreviewButton.Location
-                 = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
+                 = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
             Preview_Back_Button.Location
@@ -94,7 +94,7 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
+                = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Preview_Back_Button.Location
@@ -327,10 +327,25 @@ namespace SalesReportProject
             else
             {
                 timer1.Stop();
+                transparency = 1;
             }
+            try
+            {
+                controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+            }
+            catch
+            {
 
-            controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+            }
+            
            
+            for (int i = 0; i < listOfAllButtons.Count(); i++)
+            {
+                if (1 == 1)
+                {
+
+                }
+            }
         }
 
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
