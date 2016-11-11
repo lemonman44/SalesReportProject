@@ -23,6 +23,15 @@ namespace SalesReportProject
         //Each of those buttons causes the menuPage panel to become invisible and another panel to become visible
         //etc. etc. you probably get the gist
 
+        private Button[] listOfAllButtons = new Button[] 
+        {
+
+        };
+        
+        //private bool mouseOver;
+        private Button controlMousedOver;
+        private int transparency = 1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +40,9 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            //starts the timer used for many functions throughout the program
+            timer1.Start();
+
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -199,6 +211,7 @@ namespace SalesReportProject
 
                 }
             }
+            //clears the text field
             addAccountTextField.Text = null;
         }
 
@@ -213,12 +226,15 @@ namespace SalesReportProject
                     subtractAccount.Close();
                     subtractAccount.Dispose();
                 }
+
                 //takes everything not selected in the displaybox and writes it back to the file
                 using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", true))
                 {
                     for (int i = 0; i < accountDisplayBox.Items.Count; i++)
                     {
-                        if (!accountDisplayBox.GetSelected(i))
+                        //if the item at index i in the account display box is not checked then the
+                        //text at in index i is writen back into the file
+                        if (!accountDisplayBox.GetItemChecked(i))
                         {
                             subtractAccount.WriteLine(accountDisplayBox.Items[i].ToString());
                         }
@@ -226,6 +242,7 @@ namespace SalesReportProject
                     subtractAccount.Close();
                     subtractAccount.Dispose();
                 }
+
                 //refreshes the display box
                 fillAndRefreshAccounts();
             }
@@ -277,7 +294,7 @@ namespace SalesReportProject
                 {
                     while ((lineInTheFile = readAccountsFile.ReadLine()) != null)
                     {
-                        accountDisplayBox.Items.Add(lineInTheFile);
+                        accountDisplayBox.Items.Add(lineInTheFile, false);
                     }
                 }
             }
@@ -287,6 +304,31 @@ namespace SalesReportProject
             }
         }
 
+        private void accountsSettingsButton_MouseEnter(object sender, EventArgs e)
+        {
+            controlMousedOver = accountsSettingsButton;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (transparency != 5)
+            {
+                transparency++;
+                Console.WriteLine(transparency);
+            }
+            else
+            {
+                timer1.Stop();
+            }
+
+            controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+           
+        }
+
+        private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
 
         /*
         private void Images(object sender, EventArgs e)
