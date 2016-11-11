@@ -316,7 +316,8 @@ namespace SalesReportProject
                 accountsSettingsButton,
                 emailSettingsButton,
                 saveEmailDataButton,
-                addAccountsButton
+                addAccountsButton,
+                menuToPreviewButton
             };
 
             if (transparency != 5)
