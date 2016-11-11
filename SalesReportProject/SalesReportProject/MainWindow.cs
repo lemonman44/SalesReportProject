@@ -317,7 +317,8 @@ namespace SalesReportProject
                 emailSettingsButton,
                 saveEmailDataButton,
                 addAccountsButton,
-                menuToPreviewButton
+                menuToPreviewButton,
+                subtractAccountsButton
             };
 
             if (controlMousedOver != null)
