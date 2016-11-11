@@ -392,7 +392,7 @@
             this.emailPasswordField.Location = new System.Drawing.Point(110, 79);
             this.emailPasswordField.Margin = new System.Windows.Forms.Padding(2);
             this.emailPasswordField.Name = "emailPasswordField";
-            this.emailPasswordField.PasswordChar = '*';
+            this.emailPasswordField.PasswordChar = '$';
             this.emailPasswordField.Size = new System.Drawing.Size(232, 20);
             this.emailPasswordField.TabIndex = 6;
             // 
