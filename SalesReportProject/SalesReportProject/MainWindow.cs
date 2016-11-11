@@ -333,16 +333,16 @@ namespace SalesReportProject
            
             for (int i = 0; i < listOfAllButtons.Count(); i++)
             {
-                if (1 == 1)
+                if (listOfAllButtons[i] != controlMousedOver)
                 {
-
+                    listOfAllButtons[i].BackColor = Color.FromArgb(250 - transparency * 50, 255, 255, 255);
                 }
             }
         }
 
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
         {
-            
+            controlMousedOver = null;
         }
 
         /*
