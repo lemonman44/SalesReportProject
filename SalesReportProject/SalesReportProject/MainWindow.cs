@@ -27,7 +27,7 @@ namespace SalesReportProject
         
         //private bool mouseOver;
         private Button controlMousedOver;
-        private int transparency = 1;
+        private int transparency = 0;
 
         public MainWindow()
         {
@@ -321,31 +321,41 @@ namespace SalesReportProject
                 subtractAccountsButton
             };
 
-            if (transparency != 5)
+            if (controlMousedOver != null)
             {
-                transparency++;
-                Console.WriteLine(transparency);
-            }
-            else
-            {
-                timer1.Stop();
-                transparency = 1;
-            }
-            try
-            {
-                controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
-            }
-            catch
-            {
+                if (transparency != 5)
+                {
+                    transparency++;
+                    Console.WriteLine(transparency);
+                    try
+                    {
+                        controlMousedOver.FlatAppearance.MouseOverBackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+                    }
+                    catch
+                    {
 
+                    }
+                }
             }
+            else if (transparency != 0)
+            {
+                transparency--;
+            }
+
             
-           
             for (int i = 0; i < listOfAllButtons.Count(); i++)
             {
                 if (listOfAllButtons[i] != controlMousedOver)
                 {
-                    listOfAllButtons[i].BackColor = Color.FromArgb(250 - transparency * 50, 255, 255, 255);
+                    try
+                    {
+                        listOfAllButtons[i].FlatAppearance.MouseOverBackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+                    } 
+                    catch
+                    {
+
+                    }
+                    
                 }
             }
         }
