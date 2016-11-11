@@ -449,6 +449,7 @@
             this.subtractAccountsButton.TabIndex = 6;
             this.subtractAccountsButton.Text = "--";
             this.subtractAccountsButton.UseVisualStyleBackColor = true;
+            this.subtractAccountsButton.Click += new System.EventHandler(this.subtractAccountsButton_Click);
             // 
             // addAccountTextField
             // 
