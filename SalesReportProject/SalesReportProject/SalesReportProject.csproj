@@ -92,10 +92,6 @@
   <ItemGroup>
     <Content Include="Companies.txt" />
     <Content Include="Email_info.txt" />
-<<<<<<< HEAD
-=======
-    <None Include="Resources\SOR-logo.png" />
->>>>>>> origin/master
     <None Include="Resources\.1.png" />
     <None Include="Resources\..png" />
   </ItemGroup>
