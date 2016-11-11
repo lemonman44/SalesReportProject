@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,12 @@ namespace SalesReportProject
             menuPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
             settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
+
+            //the following code reads the Email_info.txt file to populate the email fields in the settings page
+            fillEmailFields();
+
+            //the following code reads the Companies.txt file to populate the accountDisplayBox in the settings page
+            fillAndRefreshAccounts();
 
             //The following code sets the starting locations of the panels in the MainWindow form
             menuPage.Location = new Point(0, 0);
@@ -80,7 +87,7 @@ namespace SalesReportProject
             menuToPreviewButton.Location
                 = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
             menuToSettingsButton.Location
-                = new Point(ClientSize.Width - 35, 5);
+                = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Preview_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             Settings_Back_Button.Location
@@ -141,11 +148,145 @@ namespace SalesReportProject
             menuPage.Visible = true;
         }
 
+        //changes the currently displayed panel from settings to menu
         private void Settings_Back_Button_Click(object sender, EventArgs e)
         {
             settingsPage.Visible = false;
             menuPage.Visible = true;
         }
+        
+        //takes every field in the email settings and overwrites the email_info file with it
+        private void saveEmailDataButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter saveNewEmailData = new StreamWriter("..\\..\\Email_info.txt", false))
+                {
+                    saveNewEmailData.WriteLine(emailAddressField.Text);
+                    saveNewEmailData.WriteLine(emailPasswordField.Text);
+                    saveNewEmailData.Write(destinationAddressField.Text);
+                    saveNewEmailData.Close();
+                    saveNewEmailData.Dispose();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        //adds a company account to Companies.txt
+        private void addAccountsButton_Click(object sender, EventArgs e)
+        {
+            //if there are actual characters in the text field then it'll take those characters and add
+            //them to the accounts file
+            if (addAccountTextField.Text != "")
+            {
+                try
+                {
+                    using (StreamWriter saveNewAccount = new StreamWriter("..\\..\\Companies.txt", true))
+                    {
+                        //takes the text in the field and writes it into the file
+                        saveNewAccount.WriteLine(addAccountTextField.Text);
+                        saveNewAccount.Close();
+                        saveNewAccount.Dispose();
+                    }
+                    //refreshes the display box
+                    fillAndRefreshAccounts();
+                }
+                catch
+                {
+
+                }
+            }
+            addAccountTextField.Text = null;
+        }
+
+        //removes a company account from companies.txt
+        private void subtractAccountsButton_Click(object sender, EventArgs e) {
+            try
+            {
+                //clears the file completely
+                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", false))
+                {
+                    subtractAccount.Write("");
+                    subtractAccount.Close();
+                    subtractAccount.Dispose();
+                }
+                //takes everything not selected in the displaybox and writes it back to the file
+                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", true))
+                {
+                    for (int i = 0; i < accountDisplayBox.Items.Count; i++)
+                    {
+                        if (!accountDisplayBox.GetSelected(i))
+                        {
+                            subtractAccount.WriteLine(accountDisplayBox.Items[i].ToString());
+                        }
+                    }
+                    subtractAccount.Close();
+                    subtractAccount.Dispose();
+                }
+                //refreshes the display box
+                fillAndRefreshAccounts();
+            }
+            catch
+            {
+
+            }
+        }
+
+        //method for populating the email fields in settings panel
+        private void fillEmailFields()
+        {
+            try
+            {
+                string lineInTheFile;
+                using (StreamReader readEmailInfoFile = new StreamReader("..\\..\\Email_info.txt"))
+                {
+                    for (int i = 0; (lineInTheFile = readEmailInfoFile.ReadLine()) != null; i++)
+                    {
+                        if (i == 0)
+                        {
+                            emailAddressField.Text = lineInTheFile;
+                        }
+                        if (i == 1)
+                        {
+                            emailPasswordField.Text = lineInTheFile;
+                        }
+                        if (i == 2)
+                        {
+                            destinationAddressField.Text = lineInTheFile;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        //method for populating and refreshing the accountDisplayBox
+        private void fillAndRefreshAccounts()
+        {
+            try
+            {
+                accountDisplayBox.Items.Clear();
+                string lineInTheFile;
+                using (StreamReader readAccountsFile = new StreamReader("..\\..\\Companies.txt"))
+                {
+                    while ((lineInTheFile = readAccountsFile.ReadLine()) != null)
+                    {
+                        accountDisplayBox.Items.Add(lineInTheFile);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
 
         /*
         private void Images(object sender, EventArgs e)
