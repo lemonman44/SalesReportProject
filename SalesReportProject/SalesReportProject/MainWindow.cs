@@ -23,10 +23,7 @@ namespace SalesReportProject
         //Each of those buttons causes the menuPage panel to become invisible and another panel to become visible
         //etc. etc. you probably get the gist
 
-        private Button[] listOfAllButtons = new Button[] 
-        {
-
-        };
+        
         
         //private bool mouseOver;
         private Button controlMousedOver;
@@ -311,6 +308,17 @@ namespace SalesReportProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+                Button[] listOfAllButtons = new Button[]
+            {
+                menuToSettingsButton,
+                Preview_Back_Button,
+                Settings_Back_Button,
+                accountsSettingsButton,
+                emailSettingsButton,
+                saveEmailDataButton,
+                addAccountsButton
+            };
+
             if (transparency != 5)
             {
                 transparency++;
