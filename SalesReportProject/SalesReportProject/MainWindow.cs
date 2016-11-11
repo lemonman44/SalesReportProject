@@ -23,11 +23,17 @@ namespace SalesReportProject
         //Each of those buttons causes the menuPage panel to become invisible and another panel to become visible
         //etc. etc. you probably get the gist
 
-        
-        
-        //private bool mouseOver;
+
+        private int menuToSettingsButtonALPHACHANGE = 0;
+        private int Preview_Back_ButtonALPHACHANGE = 0;
+        private int Settings_Back_ButtonALPHACHANGE = 0;
+        private int accountsSettingsButtonALPHACHANGE = 0;
+        private int emailSettingsButtonALPHACHANGE = 0;
+        private int saveEmailDataButtonALPHACHANGE = 0;
+        private int addAccountsButtonALPHACHANGE = 0;
+        private int menuToPreviewButtonALPHACHANGE = 0;
+        private int subtractAccountsButtonALPHACHANGE = 0;
         private Button controlMousedOver;
-        private int transparency = 0;
 
         public MainWindow()
         {
@@ -308,56 +314,7 @@ namespace SalesReportProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Button[] listOfAllButtons = new Button[]
-            {
-                menuToSettingsButton,
-                Preview_Back_Button,
-                Settings_Back_Button,
-                accountsSettingsButton,
-                emailSettingsButton,
-                saveEmailDataButton,
-                addAccountsButton,
-                menuToPreviewButton,
-                subtractAccountsButton
-            };
 
-            if (controlMousedOver != null)
-            {
-                if (transparency != 5)
-                {
-                    transparency++;
-                    Console.WriteLine(transparency);
-                    try
-                    {
-                        controlMousedOver.FlatAppearance.MouseOverBackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
-                    }
-                    catch
-                    {
-
-                    }
-                }
-            }
-            else if (transparency != 0)
-            {
-                transparency--;
-            }
-
-            
-            for (int i = 0; i < listOfAllButtons.Count(); i++)
-            {
-                if (listOfAllButtons[i] != controlMousedOver)
-                {
-                    try
-                    {
-                        listOfAllButtons[i].FlatAppearance.MouseOverBackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
-                    } 
-                    catch
-                    {
-
-                    }
-                    
-                }
-            }
         }
 
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
