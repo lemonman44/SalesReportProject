@@ -321,12 +321,22 @@ namespace SalesReportProject
                 timer1.Stop();
                 transparency = 1;
             }
-
-            controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
-           
-            for (int i = 0; i < listOfAllButtons.Count(); )
+            try
+            {
+                controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
+            }
+            catch
             {
 
+            }
+            
+           
+            for (int i = 0; i < listOfAllButtons.Count(); i++)
+            {
+                if (1 == 1)
+                {
+
+                }
             }
         }
 
