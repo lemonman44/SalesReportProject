@@ -319,10 +319,15 @@ namespace SalesReportProject
             else
             {
                 timer1.Stop();
+                transparency = 1;
             }
 
             controlMousedOver.BackColor = Color.FromArgb(transparency * 50, 255, 255, 0);
            
+            for (int i = 0; i < listOfAllButtons.Count(); )
+            {
+
+            }
         }
 
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
