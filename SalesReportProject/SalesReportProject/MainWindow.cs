@@ -85,6 +85,27 @@ namespace SalesReportProject
             emailSettingsButton.Width = ClientSize.Width;
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
+
+            //object.Rows.add(someArray[])
+            //csvSampleFile.csv
+            //var data = File.ReadLines(filePath).Select(x => x.Split(',')).ToArray();
+            using (StreamReader read= new StreamReader("..\\..\\csvSampleFile.csv")){
+
+                int lines = File.ReadAllLines("..\\..\\csvSampleFile.csv").Count();
+                dataPreviewWindow.Rows.Add(lines);
+                string[,] csvData = new string[27, lines];
+
+                for (int i = 0; i == lines; i++)
+                {
+                    for (int j = 0; j == lines; j++)
+                    {
+                        csvData[i, j] = read.ReadLine().Split(",");
+    
+                }
+                }
+            }
+
+
             
         }
 
