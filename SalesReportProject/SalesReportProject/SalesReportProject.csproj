@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridData.cs" />
     <Compile Include="ErrorPopup.cs">
       <SubType>Form</SubType>
     </Compile>

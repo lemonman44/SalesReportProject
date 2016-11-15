@@ -178,7 +178,7 @@
             this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
             this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
-            this.dataPreviewWindow.Size = new System.Drawing.Size(480, 288);
+            this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
             this.dataPreviewWindow.TabIndex = 0;
             // 
             // Distributor_ID_Number

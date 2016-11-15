@@ -101,38 +101,41 @@ namespace SalesReportProject
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
 
-            addAccountsButton.Location 
-                = new Point(accountDisplayBox.Location.X,
-                accountDisplayBox.Location.Y + accountDisplayBox.Height);
-
-            subtractAccountsButton.Location
-                = new Point(accountDisplayBox.Location.X + accountDisplayBox.Width - subtractAccountsButton.Width,
-                accountDisplayBox.Location.Y + accountDisplayBox.Height);
-
-            addAccountTextField.Location
-                = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
-                accountDisplayBox.Location.Y + accountDisplayBox.Height);
-
-
-
-            //object.Rows.add(someArray[])
-            //csvSampleFile.csv
-            //var data = File.ReadLines(filePath).Select(x => x.Split(',')).ToArray();
-            using (StreamReader read= new StreamReader("..\\..\\csvSampleFile.csv")){
-
-                int lines = File.ReadAllLines("..\\..\\csvSampleFile.csv").Count();
-                dataPreviewWindow.Rows.Add(lines);
-                string[,] csvData = new string[27, lines];
-
-                for (int i = 0; i == lines; i++)
+            
+            string storeRow;
+            String[] dataArray = new String[27];
+            try
+            {
+                //converts the csv file to an array and populates the datagrid with the array
+                StreamReader readsTheCSV = new StreamReader("..\\..\\csvSampleFile.csv");
+                while ((storeRow = readsTheCSV.ReadLine()) != null)
                 {
-                    for (int j = 0; j == lines; j++)
+                    int position = 0;
+                    for (int i = 0; i < 27; i++)
                     {
-                        //this line below causing errors
-                        //csvData[i, j] = read.ReadLine().Split(",");
+                        for (; position < storeRow.Length && storeRow.ElementAt(position) != 44; position++)
+                        {
+                            dataArray[i] = dataArray[i] + storeRow.ElementAt(position);
+                        }
+                        if (storeRow.ElementAt(position) == 44 && position != storeRow.Length - 1)
+                        {
+                            position++;
+                        }
+
+                    }
+
+                    dataPreviewWindow.Rows.Add(dataArray);
+                    for (int i = 0; i < 27; i++)
+                    {
+                        dataArray[i] = "";
                     }
                 }
             }
+            catch
+            {
+
+            }
+
         }
 
         //this section is some code that will run whenever the size of the form is changed
