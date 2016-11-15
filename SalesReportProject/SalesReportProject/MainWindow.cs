@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,32 +25,9 @@ namespace SalesReportProject
         //Each of those buttons causes the menuPage panel to become invisible and another panel to become visible
         //etc. etc. you probably get the gist
 
-
-        //code that was used with fading buttons DO NOT UNCOMMENT
-        /*
-        private int[] buttonALPHACHANGES = new int[]
-        {
-            //menuToSettingsButtonALPHACHANGE
-            0,
-            //Preview_Back_ButtonALPHACHANGE
-            0,
-            //Settings_Back_ButtonALPHACHANGE
-            0,
-            //accountsSettingsButtonALPHACHANGE
-            0,
-            //emailSettingsButtonALPHACHANGE
-            0,
-            //saveEmailDataButtonALPHACHANGE
-            0,
-            //addAccountsButtonALPHACHANGE
-            0,
-            //menuToPreviewButtonALPHACHANGE
-            0,
-            //subtractAccountsButtonALPHACHANGE
-            0,
-        };
-        private Button controlMousedOver;
-        */
+        private string emailAddress;
+        private string emailPassword;
+        private string emailDestination;
 
         public MainWindow()
         {
@@ -77,6 +56,10 @@ namespace SalesReportProject
 
             //the following code reads the Companies.txt file to populate the accountDisplayBox in the settings page
             fillAndRefreshAccounts();
+
+            //The following code populates the emailpreview information
+            previewFromAddress.Text = "From: " + emailAddressField.Text;
+            previewToAddress.Text = "To: " + destinationAddressField.Text;
 
             //The following code sets the starting locations of the panels in the MainWindow form
             menuPage.Location = new Point(0, 0);
@@ -113,13 +96,26 @@ namespace SalesReportProject
                 = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
                 accountDisplayBox.Location.Y + accountDisplayBox.Height);
 
+            //The following code sets the locations and size of buttons and other controls to be more centered
+            //and looking like they're in thought out locations on the previewAndSendData panel
+            dataPreviewWindow.Size = new Size((int)(ClientSize.Width / 1.25), (int)(ClientSize.Height / 1.25));
+            dataPreviewWindow.Location = new Point(ClientSize.Width / 2 - dataPreviewWindow.Width / 2,
+                ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
+            previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
+                dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
+            
+
             //calls to populate the dataPreviewWindow
             dataGridFiller();
 
+            dataPreviewWindow.DoubleBuffered(true);
+            menuPage.DoubleBuffered(true);
+            settingsPage.DoubleBuffered(true);
+            previewAndSendDataPage.DoubleBuffered(true);
+            
         }
 
         private void dataGridFiller() {
-
             string storeRow;
             String[] dataArray = new String[27];
             try
@@ -181,6 +177,15 @@ namespace SalesReportProject
             emailSettingsButton.Width = ClientSize.Width;
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
+
+            //The following code sets the locations of buttons and other controls to be more centered
+            //and looking like they're in thought out locations on the previewAndSendData panel
+            dataPreviewWindow.Size = new Size((int)(ClientSize.Width / 1.25), (int)(ClientSize.Height / 1.25));
+            dataPreviewWindow.Location = new Point(ClientSize.Width / 2 - dataPreviewWindow.Width / 2,
+                ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
+            previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
+                dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
+            
         }
 
         //this section is code that runs when menuToPreviewButtonIsClicked
@@ -255,6 +260,9 @@ namespace SalesReportProject
             {
 
             }
+            //The following code populates the emailpreview information
+            previewFromAddress.Text = "From: " + emailAddressField.Text;
+            previewToAddress.Text = "To: " + destinationAddressField.Text;
         }
 
         //adds a company account to Companies.txt
@@ -334,15 +342,18 @@ namespace SalesReportProject
                     {
                         if (i == 0)
                         {
-                            emailAddressField.Text = lineInTheFile;
+                            emailAddress = lineInTheFile;
+                            emailAddressField.Text = emailAddress;
                         }
                         if (i == 1)
                         {
-                            emailPasswordField.Text = lineInTheFile;
+                            emailPassword = lineInTheFile;
+                            emailPasswordField.Text = emailPassword;
                         }
                         if (i == 2)
                         {
-                            destinationAddressField.Text = lineInTheFile;
+                            emailDestination = lineInTheFile;
+                            destinationAddressField.Text = emailDestination;
                         }
                     }
                 }
@@ -385,59 +396,50 @@ namespace SalesReportProject
             }
         }
 
-
-
-        //code for fading in the color of buttons DO NOT UNCOMMENT
-        /*
-        private void timer1_Tick(object sender, EventArgs e)
+        private void sendEmailButton_Click(object sender, EventArgs e)
         {
-            Button[] listOfAllButtons = new Button[]
+            try
             {
-                menuToSettingsButton,
-                Preview_Back_Button,
-                Settings_Back_Button,
-                accountsSettingsButton,
-                emailSettingsButton,
-                saveEmailDataButton,
-                addAccountsButton,
-                menuToPreviewButton,
-                subtractAccountsButton
-            };
-            for (int i = 0; i < 9; i++)
-            {
-                if (controlMousedOver == listOfAllButtons[i])
+                SmtpClient smtpClient = new SmtpClient();
+                NetworkCredential basicCredential = new NetworkCredential(emailAddress, emailPassword);
+                MailMessage message = new MailMessage();
+                MailAddress fromAddress = new MailAddress(emailAddress);
+                smtpClient.EnableSsl = true;
+
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = basicCredential;
+
+                message.From = fromAddress;
+
+                message.Subject = "attach test";
+                //Set IsBodyHtml to true means you can send HTML email.
+                message.IsBodyHtml = true;
+                message.Body = "<h1>your message body</h1>";
+
+                //Attachment salesReport = new Attachment(file);
+                //message.Attachments.Add(salesReport);
+
+                message.To.Add(emailDestination);
+
+
+                try
                 {
-                    if (buttonALPHACHANGES[i] != 5)
+                    for (int i = 0; i < 1; i++)
                     {
-                        buttonALPHACHANGES[i]++;
+                        smtpClient.Send(message);
                     }
                 }
-                else if (buttonALPHACHANGES[i] != 0)
+                catch
                 {
-                    buttonALPHACHANGES[i]--;
+                    //Error, could not send the message
+                    Console.WriteLine("meh");
                 }
             }
-            for (int i = 0; i < 9; i++)
+            catch
             {
-                listOfAllButtons[i].FlatAppearance.MouseOverBackColor
-                    = Color.FromArgb(buttonALPHACHANGES[i] * 50, 50, 50, 50);
+
             }
         }
-        */
-
-        //code for telling if the mouse is within one of the buttons DO NOT UNCOMMENT
-        /*
-        private void accountsSettingsButton_MouseEnter(object sender, EventArgs e)
-        {
-            controlMousedOver = accountsSettingsButton;
-        }
-
-        private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
-        {
-            
-            controlMousedOver = null;
-            Console.WriteLine("leave");
-        }
-        */
     }     
 }

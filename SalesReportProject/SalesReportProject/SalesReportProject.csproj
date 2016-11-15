@@ -52,6 +52,7 @@
     <Compile Include="ErrorPopup.Designer.cs">
       <DependentUpon>ErrorPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

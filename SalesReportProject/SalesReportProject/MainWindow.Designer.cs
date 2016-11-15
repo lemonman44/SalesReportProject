@@ -33,6 +33,10 @@
             this.menuToSettingsButton = new System.Windows.Forms.Button();
             this.menuToPreviewButton = new System.Windows.Forms.Button();
             this.previewAndSendDataPage = new System.Windows.Forms.Panel();
+            this.previewEmailInfo = new System.Windows.Forms.Panel();
+            this.sendEmailButton = new System.Windows.Forms.Button();
+            this.previewFromAddress = new System.Windows.Forms.Label();
+            this.previewToAddress = new System.Windows.Forms.Label();
             this.Preview_Back_Button = new System.Windows.Forms.Button();
             this.dataPreviewWindow = new System.Windows.Forms.DataGridView();
             this.Distributor_ID_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +87,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuPage.SuspendLayout();
             this.previewAndSendDataPage.SuspendLayout();
+            this.previewEmailInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPreviewWindow)).BeginInit();
             this.settingsPage.SuspendLayout();
             this.emailSettingsInfo.SuspendLayout();
@@ -123,6 +128,7 @@
             // 
             // previewAndSendDataPage
             // 
+            this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
             this.previewAndSendDataPage.Controls.Add(this.Preview_Back_Button);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
             this.previewAndSendDataPage.Location = new System.Drawing.Point(4, 987);
@@ -130,6 +136,44 @@
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
             this.previewAndSendDataPage.Size = new System.Drawing.Size(1476, 767);
             this.previewAndSendDataPage.TabIndex = 0;
+            // 
+            // previewEmailInfo
+            // 
+            this.previewEmailInfo.Controls.Add(this.sendEmailButton);
+            this.previewEmailInfo.Controls.Add(this.previewFromAddress);
+            this.previewEmailInfo.Controls.Add(this.previewToAddress);
+            this.previewEmailInfo.Location = new System.Drawing.Point(1306, 280);
+            this.previewEmailInfo.Name = "previewEmailInfo";
+            this.previewEmailInfo.Size = new System.Drawing.Size(598, 61);
+            this.previewEmailInfo.TabIndex = 1;
+            // 
+            // sendEmailButton
+            // 
+            this.sendEmailButton.Location = new System.Drawing.Point(13, 4);
+            this.sendEmailButton.Name = "sendEmailButton";
+            this.sendEmailButton.Size = new System.Drawing.Size(161, 50);
+            this.sendEmailButton.TabIndex = 2;
+            this.sendEmailButton.Text = "Send";
+            this.sendEmailButton.UseVisualStyleBackColor = true;
+            this.sendEmailButton.Click += new System.EventHandler(this.sendEmailButton_Click);
+            // 
+            // previewFromAddress
+            // 
+            this.previewFromAddress.AutoSize = true;
+            this.previewFromAddress.Location = new System.Drawing.Point(191, 4);
+            this.previewFromAddress.Name = "previewFromAddress";
+            this.previewFromAddress.Size = new System.Drawing.Size(70, 25);
+            this.previewFromAddress.TabIndex = 3;
+            this.previewFromAddress.Text = "label1";
+            // 
+            // previewToAddress
+            // 
+            this.previewToAddress.AutoSize = true;
+            this.previewToAddress.Location = new System.Drawing.Point(191, 29);
+            this.previewToAddress.Name = "previewToAddress";
+            this.previewToAddress.Size = new System.Drawing.Size(70, 25);
+            this.previewToAddress.TabIndex = 1;
+            this.previewToAddress.Text = "label2";
             // 
             // Preview_Back_Button
             // 
@@ -146,6 +190,7 @@
             // 
             this.dataPreviewWindow.AllowUserToAddRows = false;
             this.dataPreviewWindow.AllowUserToDeleteRows = false;
+            this.dataPreviewWindow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataPreviewWindow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPreviewWindow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Distributor_ID_Number,
@@ -178,6 +223,7 @@
             this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
             this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
+            this.dataPreviewWindow.ReadOnly = true;
             this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
             this.dataPreviewWindow.TabIndex = 0;
             // 
@@ -185,136 +231,163 @@
             // 
             this.Distributor_ID_Number.HeaderText = "Distributor_ID_Number.";
             this.Distributor_ID_Number.Name = "Distributor_ID_Number";
+            this.Distributor_ID_Number.ReadOnly = true;
             // 
             // Distributor_Customer_Number
             // 
             this.Distributor_Customer_Number.HeaderText = "Distributor_Customer_Number";
             this.Distributor_Customer_Number.Name = "Distributor_Customer_Number";
+            this.Distributor_Customer_Number.ReadOnly = true;
             // 
             // Distributor_Customer_Name
             // 
             this.Distributor_Customer_Name.HeaderText = "Distributor_Customer_Name";
             this.Distributor_Customer_Name.Name = "Distributor_Customer_Name";
+            this.Distributor_Customer_Name.ReadOnly = true;
             // 
             // Customer_Street_Address
             // 
             this.Customer_Street_Address.HeaderText = "Customer_Street_Address";
             this.Customer_Street_Address.Name = "Customer_Street_Address";
+            this.Customer_Street_Address.ReadOnly = true;
             // 
             // Customer_Zip
             // 
             this.Customer_Zip.HeaderText = "Customer_Zip";
             this.Customer_Zip.Name = "Customer_Zip";
+            this.Customer_Zip.ReadOnly = true;
             // 
             // Transaction_Date
             // 
             this.Transaction_Date.HeaderText = "Transaction_Date";
             this.Transaction_Date.Name = "Transaction_Date";
+            this.Transaction_Date.ReadOnly = true;
             // 
             // Distributor_Item_Number
             // 
             this.Distributor_Item_Number.HeaderText = "Distributor_Item_Number";
             this.Distributor_Item_Number.Name = "Distributor_Item_Number";
+            this.Distributor_Item_Number.ReadOnly = true;
             // 
             // Brand
             // 
             this.Brand.HeaderText = "Brand";
             this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
             // 
             // Description
             // 
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // Pack_Size
             // 
             this.Pack_Size.HeaderText = "Pack_Size";
             this.Pack_Size.Name = "Pack_Size";
+            this.Pack_Size.ReadOnly = true;
             // 
             // UOM
             // 
             this.UOM.HeaderText = "UOM";
             this.UOM.Name = "UOM";
+            this.UOM.ReadOnly = true;
             // 
             // ReDistributor_Number
             // 
             this.ReDistributor_Number.HeaderText = "ReDistributor_Number";
             this.ReDistributor_Number.Name = "ReDistributor_Number";
+            this.ReDistributor_Number.ReadOnly = true;
             // 
             // Manufacturer_Number
             // 
             this.Manufacturer_Number.HeaderText = "Manufacturer_Number";
             this.Manufacturer_Number.Name = "Manufacturer_Number";
+            this.Manufacturer_Number.ReadOnly = true;
             // 
             // Transaction_Quantity
             // 
             this.Transaction_Quantity.HeaderText = "Transaction_Quantity";
             this.Transaction_Quantity.Name = "Transaction_Quantity";
+            this.Transaction_Quantity.ReadOnly = true;
             // 
             // Transaction_Volume
             // 
             this.Transaction_Volume.HeaderText = "Transaction_Volume";
             this.Transaction_Volume.Name = "Transaction_Volume";
+            this.Transaction_Volume.ReadOnly = true;
             // 
             // Transaction_Currency
             // 
             this.Transaction_Currency.HeaderText = "Transaction_Currency";
             this.Transaction_Currency.Name = "Transaction_Currency";
+            this.Transaction_Currency.ReadOnly = true;
             // 
             // ReDistributor_Name
             // 
             this.ReDistributor_Name.HeaderText = "ReDistributor_Name";
             this.ReDistributor_Name.Name = "ReDistributor_Name";
+            this.ReDistributor_Name.ReadOnly = true;
             // 
             // Manufacturer_Name
             // 
             this.Manufacturer_Name.HeaderText = "Manufacturer_Name";
             this.Manufacturer_Name.Name = "Manufacturer_Name";
+            this.Manufacturer_Name.ReadOnly = true;
             // 
             // SCC_Code
             // 
             this.SCC_Code.HeaderText = "SCC_Code";
             this.SCC_Code.Name = "SCC_Code";
+            this.SCC_Code.ReadOnly = true;
             // 
             // UPC
             // 
             this.UPC.HeaderText = "UPC";
             this.UPC.Name = "UPC";
+            this.UPC.ReadOnly = true;
             // 
             // Category
             // 
             this.Category.HeaderText = "Category";
             this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
             // 
             // Subcategory
             // 
             this.Subcategory.HeaderText = "Subcategory";
             this.Subcategory.Name = "Subcategory";
+            this.Subcategory.ReadOnly = true;
             // 
             // Invoice_Number
             // 
             this.Invoice_Number.HeaderText = "Invoice_Number";
             this.Invoice_Number.Name = "Invoice_Number";
+            this.Invoice_Number.ReadOnly = true;
             // 
             // Category_Code
             // 
             this.Category_Code.HeaderText = "Category_Code";
             this.Category_Code.Name = "Category_Code";
+            this.Category_Code.ReadOnly = true;
             // 
             // Distribution_Center_ID
             // 
             this.Distribution_Center_ID.HeaderText = "Distribution_Center_ID";
             this.Distribution_Center_ID.Name = "Distribution_Center_ID";
+            this.Distribution_Center_ID.ReadOnly = true;
             // 
             // Substitution_Indicator
             // 
             this.Substitution_Indicator.HeaderText = "Substitution_Indicator";
             this.Substitution_Indicator.Name = "Substitution_Indicator";
+            this.Substitution_Indicator.ReadOnly = true;
             // 
             // GTIN
             // 
             this.GTIN.HeaderText = "GTIN";
             this.GTIN.Name = "GTIN";
+            this.GTIN.ReadOnly = true;
             // 
             // settingsPage
             // 
@@ -409,7 +482,7 @@
             this.emailSettingsButton.FlatAppearance.BorderSize = 0;
             this.emailSettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.emailSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.emailSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailSettingsButton.Location = new System.Drawing.Point(0, 0);
             this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.emailSettingsButton.Name = "emailSettingsButton";
@@ -509,7 +582,7 @@
             this.accountsSettingsButton.FlatAppearance.BorderSize = 0;
             this.accountsSettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.accountsSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.accountsSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountsSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountsSettingsButton.Location = new System.Drawing.Point(0, 0);
             this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.accountsSettingsButton.Name = "accountsSettingsButton";
@@ -537,6 +610,7 @@
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
             this.Text = "Sales Report App";
@@ -544,6 +618,8 @@
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.menuPage.ResumeLayout(false);
             this.previewAndSendDataPage.ResumeLayout(false);
+            this.previewEmailInfo.ResumeLayout(false);
+            this.previewEmailInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPreviewWindow)).EndInit();
             this.settingsPage.ResumeLayout(false);
             this.settingsPage.PerformLayout();
@@ -609,6 +685,10 @@
         private System.Windows.Forms.Button addAccountsButton;
         private System.Windows.Forms.CheckedListBox accountDisplayBox;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button sendEmailButton;
+        private System.Windows.Forms.Panel previewEmailInfo;
+        private System.Windows.Forms.Label previewFromAddress;
+        private System.Windows.Forms.Label previewToAddress;
     }
 }
 
