@@ -119,33 +119,21 @@ namespace SalesReportProject
         }
 
         private void dataGridFiller() {
-
-            string storeRow;
             String[] dataArray = new String[27];
             try
             {
                 //converts the csv file to an array and populates the datagrid with the array
-                StreamReader readsTheCSV = new StreamReader("..\\..\\csvSampleFile.csv");
-                while ((storeRow = readsTheCSV.ReadLine()) != null)
+                string[] fileContent = File.ReadAllLines("..\\..\\csvSampleFile.csv");
+
+                if (fileContent.Count() > 0)
                 {
-                    int position = 0;
-                    for (int i = 0; i < 27; i++)
+                    //Create data table columns
+                    string[] columns = fileContent[0].Split(',');
+                    //Adds row data
+                    for (int i = 1; i < fileContent.Count(); i++)
                     {
-                        for (; position < storeRow.Length && storeRow.ElementAt(position) != 44; position++)
-                        {
-                            dataArray[i] = dataArray[i] + storeRow.ElementAt(position);
-                        }
-                        if (storeRow.ElementAt(position) == 44 && position != storeRow.Length - 1)
-                        {
-                            position++;
-                        }
-
-                    }
-
-                    dataPreviewWindow.Rows.Add(dataArray);
-                    for (int i = 0; i < 27; i++)
-                    {
-                        dataArray[i] = "";
+                        string[] rowData = fileContent[i].Split(',');
+                        dataPreviewWindow.Rows.Add(rowData);
                     }
                 }
             }
