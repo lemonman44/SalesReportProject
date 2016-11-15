@@ -101,7 +101,20 @@ namespace SalesReportProject
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
 
-            
+            addAccountsButton.Location
+                = new Point(accountDisplayBox.Location.X,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+            subtractAccountsButton.Location
+                = new Point(accountDisplayBox.Location.X + accountDisplayBox.Width - subtractAccountsButton.Width,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+            addAccountTextField.Location
+                = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+
+
             string storeRow;
             String[] dataArray = new String[27];
             try
