@@ -341,6 +341,7 @@
             // 
             // emailSettingsInfo
             // 
+            this.emailSettingsInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.emailSettingsInfo.Controls.Add(this.saveEmailDataButton);
             this.emailSettingsInfo.Controls.Add(this.destinationAddressField);
             this.emailSettingsInfo.Controls.Add(this.destinationAddressLabel);
@@ -403,9 +404,10 @@
             // 
             // emailSettingsButton
             // 
-            this.emailSettingsButton.BackColor = System.Drawing.Color.Transparent;
+            this.emailSettingsButton.BackColor = System.Drawing.SystemColors.Control;
             this.emailSettingsButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.emailSettingsButton.FlatAppearance.BorderSize = 0;
+            this.emailSettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.emailSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emailSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailSettingsButton.Location = new System.Drawing.Point(0, 0);
@@ -439,6 +441,7 @@
             // 
             // accountSettingsInfo
             // 
+            this.accountSettingsInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.accountSettingsInfo.Controls.Add(this.subtractAccountsButton);
             this.accountSettingsInfo.Controls.Add(this.addAccountTextField);
             this.accountSettingsInfo.Controls.Add(this.addAccountsButton);
@@ -452,13 +455,16 @@
             // 
             // subtractAccountsButton
             // 
+            this.subtractAccountsButton.BackColor = System.Drawing.SystemColors.Control;
+            this.subtractAccountsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.subtractAccountsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subtractAccountsButton.Location = new System.Drawing.Point(488, 360);
             this.subtractAccountsButton.Margin = new System.Windows.Forms.Padding(4);
             this.subtractAccountsButton.Name = "subtractAccountsButton";
-            this.subtractAccountsButton.Size = new System.Drawing.Size(76, 31);
+            this.subtractAccountsButton.Size = new System.Drawing.Size(76, 38);
             this.subtractAccountsButton.TabIndex = 6;
             this.subtractAccountsButton.Text = "--";
-            this.subtractAccountsButton.UseVisualStyleBackColor = true;
+            this.subtractAccountsButton.UseVisualStyleBackColor = false;
             this.subtractAccountsButton.Click += new System.EventHandler(this.subtractAccountsButton_Click);
             // 
             // addAccountTextField
@@ -468,16 +474,20 @@
             this.addAccountTextField.Name = "addAccountTextField";
             this.addAccountTextField.Size = new System.Drawing.Size(324, 31);
             this.addAccountTextField.TabIndex = 5;
+            this.addAccountTextField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addAccountTextField_KeyDown);
             // 
             // addAccountsButton
             // 
+            this.addAccountsButton.BackColor = System.Drawing.SystemColors.Control;
+            this.addAccountsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.addAccountsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAccountsButton.Location = new System.Drawing.Point(8, 360);
             this.addAccountsButton.Margin = new System.Windows.Forms.Padding(4);
             this.addAccountsButton.Name = "addAccountsButton";
-            this.addAccountsButton.Size = new System.Drawing.Size(76, 31);
+            this.addAccountsButton.Size = new System.Drawing.Size(76, 38);
             this.addAccountsButton.TabIndex = 4;
             this.addAccountsButton.Text = "+";
-            this.addAccountsButton.UseVisualStyleBackColor = true;
+            this.addAccountsButton.UseVisualStyleBackColor = false;
             this.addAccountsButton.Click += new System.EventHandler(this.addAccountsButton_Click);
             // 
             // accountDisplayBox
@@ -495,8 +505,9 @@
             // 
             // accountsSettingsButton
             // 
-            this.accountsSettingsButton.BackColor = System.Drawing.Color.Transparent;
+            this.accountsSettingsButton.BackColor = System.Drawing.SystemColors.Control;
             this.accountsSettingsButton.FlatAppearance.BorderSize = 0;
+            this.accountsSettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.accountsSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accountsSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountsSettingsButton.Location = new System.Drawing.Point(0, 0);
@@ -507,8 +518,6 @@
             this.accountsSettingsButton.Text = "Accounts";
             this.accountsSettingsButton.UseVisualStyleBackColor = false;
             this.accountsSettingsButton.Click += new System.EventHandler(this.accountsSettingsButton_Click);
-            this.accountsSettingsButton.MouseEnter += new System.EventHandler(this.accountsSettingsButton_MouseEnter);
-            this.accountsSettingsButton.MouseLeave += new System.EventHandler(this.accountsSettingsButton_MouseLeave);
             // 
             // settingsLabel
             // 
@@ -519,10 +528,6 @@
             this.settingsLabel.Size = new System.Drawing.Size(90, 25);
             this.settingsLabel.TabIndex = 2;
             this.settingsLabel.Text = "Settings";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainWindow
             // 

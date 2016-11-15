@@ -24,16 +24,31 @@ namespace SalesReportProject
         //etc. etc. you probably get the gist
 
 
-        private int menuToSettingsButtonALPHACHANGE = 0;
-        private int Preview_Back_ButtonALPHACHANGE = 0;
-        private int Settings_Back_ButtonALPHACHANGE = 0;
-        private int accountsSettingsButtonALPHACHANGE = 0;
-        private int emailSettingsButtonALPHACHANGE = 0;
-        private int saveEmailDataButtonALPHACHANGE = 0;
-        private int addAccountsButtonALPHACHANGE = 0;
-        private int menuToPreviewButtonALPHACHANGE = 0;
-        private int subtractAccountsButtonALPHACHANGE = 0;
+        //code that was used with fading buttons DO NOT UNCOMMENT
+        /*
+        private int[] buttonALPHACHANGES = new int[]
+        {
+            //menuToSettingsButtonALPHACHANGE
+            0,
+            //Preview_Back_ButtonALPHACHANGE
+            0,
+            //Settings_Back_ButtonALPHACHANGE
+            0,
+            //accountsSettingsButtonALPHACHANGE
+            0,
+            //emailSettingsButtonALPHACHANGE
+            0,
+            //saveEmailDataButtonALPHACHANGE
+            0,
+            //addAccountsButtonALPHACHANGE
+            0,
+            //menuToPreviewButtonALPHACHANGE
+            0,
+            //subtractAccountsButtonALPHACHANGE
+            0,
+        };
         private Button controlMousedOver;
+        */
 
         public MainWindow()
         {
@@ -86,6 +101,20 @@ namespace SalesReportProject
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
 
+            addAccountsButton.Location 
+                = new Point(accountDisplayBox.Location.X,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+            subtractAccountsButton.Location
+                = new Point(accountDisplayBox.Location.X + accountDisplayBox.Width - subtractAccountsButton.Width,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+            addAccountTextField.Location
+                = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
+                accountDisplayBox.Location.Y + accountDisplayBox.Height);
+
+
+
             //object.Rows.add(someArray[])
             //csvSampleFile.csv
             //var data = File.ReadLines(filePath).Select(x => x.Split(',')).ToArray();
@@ -99,14 +128,11 @@ namespace SalesReportProject
                 {
                     for (int j = 0; j == lines; j++)
                     {
-                        csvData[i, j] = read.ReadLine().Split(",");
-    
-                }
+                        //this line below causing errors
+                        //csvData[i, j] = read.ReadLine().Split(",");
+                    }
                 }
             }
-
-
-            
         }
 
         //this section is some code that will run whenever the size of the form is changed
@@ -156,8 +182,8 @@ namespace SalesReportProject
         private void emailSettingsButton_Click(object sender, EventArgs e)
         {
             //makes sure you dont click on a thing twice
-            emailSettingsButton.Enabled = false;
-            accountsSettingsButton.Enabled = true;
+            //emailSettingsButton.Enabled = false;
+            //accountsSettingsButton.Enabled = true;
 
             //moves the other locations to where they need to be
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
@@ -169,8 +195,8 @@ namespace SalesReportProject
         private void accountsSettingsButton_Click(object sender, EventArgs e)
         {
             //makes sure you dont click on a thing twice
-            accountsSettingsButton.Enabled = false;
-            emailSettingsButton.Enabled = true;
+            //accountsSettingsButton.Enabled = false;
+            //emailSettingsButton.Enabled = true;
 
             //moves the other locations to where they need to be
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 52);
@@ -328,29 +354,69 @@ namespace SalesReportProject
             }
         }
 
+        //code so that when adding a new account you can press the enter key if not the button
+        private void addAccountTextField_KeyDown(object sender, KeyEventArgs e)
+        {
+            //checks to see if the key pressed was the enter key
+            if (e.KeyCode == Keys.Enter)
+            {
+                //runs the code that would happen if the addAccountsButton was clicked
+                addAccountsButton_Click(this, new EventArgs());
+            }
+        }
+
+
+
+        //code for fading in the color of buttons DO NOT UNCOMMENT
+        /*
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Button[] listOfAllButtons = new Button[]
+            {
+                menuToSettingsButton,
+                Preview_Back_Button,
+                Settings_Back_Button,
+                accountsSettingsButton,
+                emailSettingsButton,
+                saveEmailDataButton,
+                addAccountsButton,
+                menuToPreviewButton,
+                subtractAccountsButton
+            };
+            for (int i = 0; i < 9; i++)
+            {
+                if (controlMousedOver == listOfAllButtons[i])
+                {
+                    if (buttonALPHACHANGES[i] != 5)
+                    {
+                        buttonALPHACHANGES[i]++;
+                    }
+                }
+                else if (buttonALPHACHANGES[i] != 0)
+                {
+                    buttonALPHACHANGES[i]--;
+                }
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                listOfAllButtons[i].FlatAppearance.MouseOverBackColor
+                    = Color.FromArgb(buttonALPHACHANGES[i] * 50, 50, 50, 50);
+            }
+        }
+        */
+
+        //code for telling if the mouse is within one of the buttons DO NOT UNCOMMENT
+        /*
         private void accountsSettingsButton_MouseEnter(object sender, EventArgs e)
         {
             controlMousedOver = accountsSettingsButton;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
         {
+            
             controlMousedOver = null;
-        }
-
-        /*
-        private void Images(object sender, EventArgs e)
-        {
-            PictureBox logo = new PictureBox();
-            logo.Image = Image.FromFile("SOR-logo2.png");
-            logo.Location = new Point(360, 100);
-            logo.Size = new Size(385, 110);
-            this.Controls.Add(logo);
+            Console.WriteLine("leave");
         }
         */
     }     
