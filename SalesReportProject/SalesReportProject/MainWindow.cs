@@ -113,7 +113,12 @@ namespace SalesReportProject
                 = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
                 accountDisplayBox.Location.Y + accountDisplayBox.Height);
 
+            //calls to populate the dataPreviewWindow
+            dataGridFiller();
 
+        }
+
+        private void dataGridFiller() {
 
             string storeRow;
             String[] dataArray = new String[27];
@@ -148,7 +153,6 @@ namespace SalesReportProject
             {
 
             }
-
         }
 
         //this section is some code that will run whenever the size of the form is changed
