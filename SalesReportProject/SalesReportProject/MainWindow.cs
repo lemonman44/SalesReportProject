@@ -82,7 +82,7 @@ namespace SalesReportProject
             emailSettingsButton.Width = ClientSize.Width;
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
-            
+
         }
 
         //this section is some code that will run whenever the size of the form is changed
@@ -119,6 +119,7 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to preview page
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
+            displayErrorMessage("Nice Click!");
         }
 
         //this section is code that runs when menuToSettingsButton is cliccked
@@ -343,6 +344,13 @@ namespace SalesReportProject
         private void accountsSettingsButton_MouseLeave(object sender, EventArgs e)
         {
             
+        }
+
+        private void displayErrorMessage(string message)
+        {
+            ErrorPopup error = new ErrorPopup();
+            error.errorText = message;
+            error.ShowDialog();
         }
 
         /*
