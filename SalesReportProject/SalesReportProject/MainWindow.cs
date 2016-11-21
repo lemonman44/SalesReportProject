@@ -185,7 +185,7 @@ namespace SalesReportProject
             previewAndSendDataPage.Visible = true;
         }
 
-        //this section is code that runs when menuToSettingsButton is cliccked
+        //this section is code that runs when menuToSettingsButton is clicked
         private void menuToSettingsButton_Click(object sender, EventArgs e)
         {
             //the following switches the visible panel on the form from menu to settings page
@@ -193,6 +193,7 @@ namespace SalesReportProject
             settingsPage.Visible = true;
         }
 
+        //this section is code that runs when emailSettingsButton is clicked
         private void emailSettingsButton_Click(object sender, EventArgs e)
         {
             //makes sure you dont click on a thing twice
