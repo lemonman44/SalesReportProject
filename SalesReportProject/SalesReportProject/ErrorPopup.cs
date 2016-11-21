@@ -12,6 +12,8 @@ namespace SalesReportProject
 {
     public partial class ErrorPopup : Form
     {
+        internal string errorText;
+
         public ErrorPopup()
         {
             InitializeComponent();
@@ -21,7 +23,9 @@ namespace SalesReportProject
             acceptButton.Location
                  = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
             errorLabel.Location
-                 = new Point((ClientSize.Width / 2) - (errorLabel.Width / 2), (ClientSize.Height / 2) - (errorLabel.Width / 2));
+                 = new Point(ClientSize.Width - 100, ClientSize.Height - 50);
+            errorLabel.Text = "butts";
+            //errorLabel.Text = errorText;
         }
     }
 }
