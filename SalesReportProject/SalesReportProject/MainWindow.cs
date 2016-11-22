@@ -37,6 +37,7 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            displayErrorMessage("nice click loser");
             //starts the timer used for many functions throughout the program
             timer1.Start();
 
@@ -136,7 +137,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("CSV file not found");
             }
         }
 
@@ -248,7 +249,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Email_info.txt' not found");
             }
             //The following code populates the emailpreview information
             previewFromAddress.Text = "From: " + emailAddressField.Text;
@@ -276,7 +277,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-
+                    displayErrorMessage("'Companies.txt' not found");
                 }
             }
             //clears the text field
@@ -316,7 +317,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Companies.txt' not found");
             }
         }
 
@@ -350,7 +351,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Email_info.txt' not found");
             }
         }
 
@@ -371,7 +372,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Companies.txt' not found");
             }
         }
 
@@ -423,13 +424,18 @@ namespace SalesReportProject
                 catch
                 {
                     //Error, could not send the message
-                    Console.WriteLine("meh");
+                    displayErrorMessage("Message not sent");
                 }
             }
             catch
             {
 
             }
+        }
+        private void displayErrorMessage(string errorMessage){
+            ErrorPopup error = new ErrorPopup();
+            error.errorText = errorMessage;
+            error.ShowDialog();
         }
     }     
 }

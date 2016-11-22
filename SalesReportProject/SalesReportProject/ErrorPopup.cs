@@ -20,12 +20,24 @@ namespace SalesReportProject
         }
         private void ErrorPopup_Load(object sender, EventArgs e)
         {
+            errorLabel.Text = errorText;
             acceptButton.Location
                  = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
             errorLabel.Location
-                 = new Point(ClientSize.Width - 100, ClientSize.Height - 50);
-            errorLabel.Text = "butts";
-            //errorLabel.Text = errorText;
+                 = new Point((ClientSize.Width - errorLabel.Width)/2, (ClientSize.Height - errorLabel.Height)/3);
+        }
+
+        private void ErrorPopup_SizeChanged(object sender, EventArgs e)
+        {
+            acceptButton.Location
+                 = new Point(ClientSize.Width - 80, ClientSize.Height - 30);
+            errorLabel.Location
+                 = new Point((ClientSize.Width - errorLabel.Width) / 2, (ClientSize.Height - errorLabel.Height) / 3);
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
