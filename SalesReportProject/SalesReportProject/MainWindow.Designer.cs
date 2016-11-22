@@ -131,12 +131,12 @@
             // 
             // menuToPreviewButton
             // 
-            this.menuToPreviewButton.Location = new System.Drawing.Point(306, 286);
+            this.menuToPreviewButton.Location = new System.Drawing.Point(344, 290);
             this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
-            this.menuToPreviewButton.Size = new System.Drawing.Size(65, 21);
+            this.menuToPreviewButton.Size = new System.Drawing.Size(92, 22);
             this.menuToPreviewButton.TabIndex = 0;
-            this.menuToPreviewButton.Text = "Click Here";
+            this.menuToPreviewButton.Text = "Preview Data";
             this.menuToPreviewButton.UseVisualStyleBackColor = true;
             this.menuToPreviewButton.Click += new System.EventHandler(this.menuToPreviewButton_Click);
             // 
