@@ -243,7 +243,7 @@ namespace SalesReportProject
                     saveNewEmailData.WriteLine(emailPasswordField.Text);
                     saveNewEmailData.Write(destinationAddressField.Text);
                     saveNewEmailData.Close();
-                    saveNewEmailData.Dispose();
+                    //saveNewEmailData.Dispose();
                 }
             }
             catch
@@ -269,7 +269,7 @@ namespace SalesReportProject
                         //takes the text in the field and writes it into the file
                         saveNewAccount.WriteLine(addAccountTextField.Text);
                         saveNewAccount.Close();
-                        saveNewAccount.Dispose();
+                        //saveNewAccount.Dispose();
                     }
                     //refreshes the display box
                     fillAndRefreshAccounts();
@@ -292,7 +292,7 @@ namespace SalesReportProject
                 {
                     subtractAccount.Write("");
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //takes everything not selected in the displaybox and writes it back to the file
@@ -308,7 +308,7 @@ namespace SalesReportProject
                         }
                     }
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //refreshes the display box
