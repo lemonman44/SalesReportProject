@@ -41,7 +41,7 @@ namespace SalesReportProject
         {
             displayErrorMessage("nice click loser");
             //starts the timer used for many functions throughout the program
-            timer1.Start();
+            
 
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
