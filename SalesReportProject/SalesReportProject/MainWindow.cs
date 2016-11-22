@@ -450,6 +450,7 @@ namespace SalesReportProject
 
             }
         }
+
         private void displayErrorMessage(string errorMessage){
             ErrorPopup error = new ErrorPopup();
             error.errorText = errorMessage;
