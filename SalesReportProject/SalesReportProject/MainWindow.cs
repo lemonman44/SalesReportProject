@@ -28,6 +28,8 @@ namespace SalesReportProject
         private string emailAddress;
         private string emailPassword;
         private string emailDestination;
+        private string emailSubject;
+        private string emailBody;
 
         public MainWindow()
         {
@@ -37,9 +39,6 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            //starts the timer used for many functions throughout the program
-            timer1.Start();
-
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -110,10 +109,6 @@ namespace SalesReportProject
             dataGridFiller();
 
             dataPreviewWindow.DoubleBuffered(true);
-            //menuPage.DoubleBuffered(true);
-            //settingsPage.DoubleBuffered(true);
-            //previewAndSendDataPage.DoubleBuffered(true);
-            
         }
 
         private void dataGridFiller() {
@@ -205,8 +200,8 @@ namespace SalesReportProject
 
             //moves the other locations to where they need to be
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
-            accountSettingsInfo.Location = new Point(0, 208 + 104);
-            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104);
+            accountSettingsInfo.Location = new Point(0, 208 + 104 + 80);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
 
         }
 
@@ -244,7 +239,9 @@ namespace SalesReportProject
                 {
                     saveNewEmailData.WriteLine(emailAddressField.Text);
                     saveNewEmailData.WriteLine(emailPasswordField.Text);
-                    saveNewEmailData.Write(destinationAddressField.Text);
+                    saveNewEmailData.WriteLine(destinationAddressField.Text);
+                    saveNewEmailData.WriteLine(emailSubjectField.Text);
+                    saveNewEmailData.Write(emailBodyField.Text);
                     saveNewEmailData.Close();
                     //saveNewEmailData.Dispose();
                 }
@@ -338,15 +335,30 @@ namespace SalesReportProject
                             emailAddress = lineInTheFile;
                             emailAddressField.Text = emailAddress;
                         }
-                        if (i == 1)
+                        else if (i == 1)
                         {
                             emailPassword = lineInTheFile;
                             emailPasswordField.Text = emailPassword;
                         }
-                        if (i == 2)
+                        else if (i == 2)
                         {
                             emailDestination = lineInTheFile;
                             destinationAddressField.Text = emailDestination;
+                        }
+                        else if (i == 3)
+                        {
+                            emailSubject = lineInTheFile;
+                            emailSubjectField.Text = emailSubject;
+                        }
+                        else
+                        {
+                            if (i != 4)
+                            {
+                                
+                                emailBody += "\r\n";
+                            }
+                            emailBody += lineInTheFile;
+                            emailBodyField.Text = emailBody;
                         }
                     }
                 }
