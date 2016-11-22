@@ -109,9 +109,9 @@ namespace SalesReportProject
             dataGridFiller();
 
             dataPreviewWindow.DoubleBuffered(true);
-            menuPage.DoubleBuffered(true);
-            settingsPage.DoubleBuffered(true);
-            previewAndSendDataPage.DoubleBuffered(true);
+            //menuPage.DoubleBuffered(true);
+            //settingsPage.DoubleBuffered(true);
+            //previewAndSendDataPage.DoubleBuffered(true);
             
         }
 
