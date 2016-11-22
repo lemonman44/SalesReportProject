@@ -37,6 +37,7 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            displayErrorMessage("nice click loser");
             //starts the timer used for many functions throughout the program
             timer1.Start();
 
@@ -137,7 +138,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("CSV file not found");
             }
         }
 
@@ -246,12 +247,12 @@ namespace SalesReportProject
                     saveNewEmailData.WriteLine(emailPasswordField.Text);
                     saveNewEmailData.Write(destinationAddressField.Text);
                     saveNewEmailData.Close();
-                    saveNewEmailData.Dispose();
+                    //saveNewEmailData.Dispose();
                 }
             }
             catch
             {
-
+                displayErrorMessage("'Email_info.txt' not found");
             }
             //The following code populates the emailpreview information
             previewFromAddress.Text = "From: " + emailAddressField.Text;
@@ -272,14 +273,14 @@ namespace SalesReportProject
                         //takes the text in the field and writes it into the file
                         saveNewAccount.WriteLine(addAccountTextField.Text);
                         saveNewAccount.Close();
-                        saveNewAccount.Dispose();
+                        //saveNewAccount.Dispose();
                     }
                     //refreshes the display box
                     fillAndRefreshAccounts();
                 }
                 catch
                 {
-
+                    displayErrorMessage("'Companies.txt' not found");
                 }
             }
             //clears the text field
@@ -295,7 +296,7 @@ namespace SalesReportProject
                 {
                     subtractAccount.Write("");
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //takes everything not selected in the displaybox and writes it back to the file
@@ -311,7 +312,7 @@ namespace SalesReportProject
                         }
                     }
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //refreshes the display box
@@ -319,7 +320,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Companies.txt' not found");
             }
         }
 
@@ -353,7 +354,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Email_info.txt' not found");
             }
         }
 
@@ -374,7 +375,7 @@ namespace SalesReportProject
             }
             catch
             {
-
+                displayErrorMessage("'Companies.txt' not found");
             }
         }
 
@@ -426,13 +427,18 @@ namespace SalesReportProject
                 catch
                 {
                     //Error, could not send the message
-                    Console.WriteLine("meh");
+                    displayErrorMessage("Message not sent");
                 }
             }
             catch
             {
 
             }
+        }
+        private void displayErrorMessage(string errorMessage){
+            ErrorPopup error = new ErrorPopup();
+            error.errorText = errorMessage;
+            error.ShowDialog();
         }
     }     
 }
