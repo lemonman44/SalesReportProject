@@ -48,16 +48,19 @@
             this.acceptButton.TabIndex = 1;
             this.acceptButton.Text = "Ok";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // ErrorPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 95);
+            this.ClientSize = new System.Drawing.Size(321, 96);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.errorLabel);
             this.Name = "ErrorPopup";
             this.Text = "Error";
+            this.Load += new System.EventHandler(this.ErrorPopup_Load);
+            this.SizeChanged += new System.EventHandler(this.ErrorPopup_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
