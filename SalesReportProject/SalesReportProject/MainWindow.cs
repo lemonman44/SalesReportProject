@@ -70,13 +70,14 @@ namespace SalesReportProject
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thought out locations
             menuToPreviewButton.Location
-                 = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
+                 = new Point(ClientSize.Width / 2-menuToPreviewButton.Width/2, menuToPreviewButton.Location.Y);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
             Preview_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             Settings_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+            pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thoughtout out locations on the settingsPage panel
@@ -110,9 +111,9 @@ namespace SalesReportProject
             dataGridFiller();
 
             dataPreviewWindow.DoubleBuffered(true);
-            menuPage.DoubleBuffered(true);
-            settingsPage.DoubleBuffered(true);
-            previewAndSendDataPage.DoubleBuffered(true);
+            //menuPage.DoubleBuffered(true);
+            //settingsPage.DoubleBuffered(true);
+            //previewAndSendDataPage.DoubleBuffered(true);
             
         }
 
@@ -153,13 +154,15 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
+                = new Point(ClientSize.Width/2-menuToPreviewButton.Width/2, menuToPreviewButton.Location.Y);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Preview_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             Settings_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+            pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
+            label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thoughtout out locations on the settingsPage panel
@@ -244,7 +247,7 @@ namespace SalesReportProject
                     saveNewEmailData.WriteLine(emailPasswordField.Text);
                     saveNewEmailData.Write(destinationAddressField.Text);
                     saveNewEmailData.Close();
-                    saveNewEmailData.Dispose();
+                    //saveNewEmailData.Dispose();
                 }
             }
             catch
@@ -270,7 +273,7 @@ namespace SalesReportProject
                         //takes the text in the field and writes it into the file
                         saveNewAccount.WriteLine(addAccountTextField.Text);
                         saveNewAccount.Close();
-                        saveNewAccount.Dispose();
+                        //saveNewAccount.Dispose();
                     }
                     //refreshes the display box
                     fillAndRefreshAccounts();
@@ -293,7 +296,7 @@ namespace SalesReportProject
                 {
                     subtractAccount.Write("");
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //takes everything not selected in the displaybox and writes it back to the file
@@ -309,7 +312,7 @@ namespace SalesReportProject
                         }
                     }
                     subtractAccount.Close();
-                    subtractAccount.Dispose();
+                    //subtractAccount.Dispose();
                 }
 
                 //refreshes the display box
