@@ -86,6 +86,7 @@
             this.accountsSettingsButton = new System.Windows.Forms.Button();
             this.settingsLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.menuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewAndSendDataPage.SuspendLayout();
@@ -130,7 +131,7 @@
             // 
             // menuToPreviewButton
             // 
-            this.menuToPreviewButton.Location = new System.Drawing.Point(307, 267);
+            this.menuToPreviewButton.Location = new System.Drawing.Point(306, 286);
             this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
             this.menuToPreviewButton.Size = new System.Drawing.Size(65, 21);
@@ -141,6 +142,7 @@
             // 
             // previewAndSendDataPage
             // 
+            this.previewAndSendDataPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
             this.previewAndSendDataPage.Controls.Add(this.Preview_Back_Button);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
@@ -406,6 +408,8 @@
             // 
             // settingsPage
             // 
+            this.settingsPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.settingsPage.Controls.Add(this.label1);
             this.settingsPage.Controls.Add(this.Settings_Back_Button);
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
             this.settingsPage.Controls.Add(this.accountSettingsInfo);
@@ -612,15 +616,24 @@
             this.settingsLabel.Location = new System.Drawing.Point(225, 0);
             this.settingsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(45, 13);
+            this.settingsLabel.Size = new System.Drawing.Size(0, 13);
             this.settingsLabel.TabIndex = 2;
-            this.settingsLabel.Text = "Settings";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.Location = new System.Drawing.Point(309, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 31);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Settings";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 459);
+            this.ClientSize = new System.Drawing.Size(743, 404);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
@@ -705,6 +718,7 @@
         private System.Windows.Forms.Label previewFromAddress;
         private System.Windows.Forms.Label previewToAddress;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
