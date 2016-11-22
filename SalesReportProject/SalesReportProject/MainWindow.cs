@@ -69,7 +69,7 @@ namespace SalesReportProject
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thought out locations
             menuToPreviewButton.Location
-                 = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
+                 = new Point(ClientSize.Width - 450, ClientSize.Height - 100);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
             Preview_Back_Button.Location
@@ -152,7 +152,7 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width - 85, ClientSize.Height - 30);
+                = new Point(ClientSize.Width - 450, ClientSize.Height - 100);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Preview_Back_Button.Location
