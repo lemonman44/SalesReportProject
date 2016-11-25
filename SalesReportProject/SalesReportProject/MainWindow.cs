@@ -106,20 +106,17 @@ namespace SalesReportProject
                 ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
             previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
                 dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
-            
-
-            //calls to populate the dataPreviewWindow
-            dataGridFiller();
 
             dataPreviewWindow.DoubleBuffered(true);
         }
 
         private void dataGridFiller() {
             String[] dataArray = new String[27];
+            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
             try
             {
                 //converts the csv file to an array and populates the datagrid with the array
-                string[] fileContent = File.ReadAllLines("..\\..\\csvSampleFile.csv");
+                string[] fileContent = File.ReadAllLines(csvFilePath);
 
                 if (fileContent.Count() > 0)
                 {
@@ -136,6 +133,34 @@ namespace SalesReportProject
             catch
             {
                 displayErrorMessage("CSV file not found");
+
+                // Displays an OpenFileDialog so the user can select csv file
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "CSV Files|*.csv";
+                openFileDialog1.Title = "Select CSV File";
+
+                // Show the Dialog.
+                // If the user clicked OK in the dialog and
+                // a .csv file was selected, open it.
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    csvFilePath = openFileDialog1.FileName;
+                    
+                    //Fills array based on correct CSV file path
+                    string[] fileContent = File.ReadAllLines(csvFilePath);
+
+                    if (fileContent.Count() > 0)
+                    {
+                        //Create data table columns
+                        string[] columns = fileContent[0].Split(',');
+                        //Adds row data
+                        for (int i = 1; i < fileContent.Count(); i++)
+                        {
+                            string[] rowData = fileContent[i].Split(',');
+                            dataPreviewWindow.Rows.Add(rowData);
+                        }
+                    }
+                }
             }
         }
 
@@ -184,6 +209,11 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to preview page
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
+            
+            //calls to populate the dataPreviewWindow
+            dataGridFiller();
+
+
         }
 
         //this section is code that runs when menuToSettingsButton is clicked
@@ -455,5 +485,6 @@ namespace SalesReportProject
             error.errorText = errorMessage;
             error.ShowDialog();
         }
+
     }     
 }
