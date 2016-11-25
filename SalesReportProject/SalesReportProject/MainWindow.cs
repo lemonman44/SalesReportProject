@@ -39,7 +39,6 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            displayErrorMessage("nice click loser");
             //starts the timer used for many functions throughout the program
             
 
@@ -72,7 +71,7 @@ namespace SalesReportProject
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thought out locations
             menuToPreviewButton.Location
-                 = new Point(ClientSize.Width / 2-menuToPreviewButton.Width/2, menuToPreviewButton.Location.Y);
+                 = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
             Preview_Back_Button.Location
@@ -152,7 +151,7 @@ namespace SalesReportProject
             //the following code keeps the locations of buttons and other controls where they were
             //relative to where they started
             menuToPreviewButton.Location
-                = new Point(ClientSize.Width/2-menuToPreviewButton.Width/2, menuToPreviewButton.Location.Y);
+                = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Preview_Back_Button.Location
