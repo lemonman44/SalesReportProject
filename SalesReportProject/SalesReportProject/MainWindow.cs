@@ -113,7 +113,7 @@ namespace SalesReportProject
 
         private void dataGridFiller() {
             String[] dataArray = new String[27];
-            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
+            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFil.csv";
             try
             {
                 //converts the csv file to an array and populates the datagrid with the array
@@ -133,7 +133,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("CSV file not found");
+                displayPopupMessage("CSV file not found", "Error");
 
                 // Displays an OpenFileDialog so the user can select csv file
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -263,7 +263,7 @@ namespace SalesReportProject
             if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals("")))
             {
 
-                displayErrorMessage("Required field left blank");
+                displayPopupMessage("Required field left blank", "Error");
 
             }
             else
@@ -279,7 +279,7 @@ namespace SalesReportProject
             //if statement makes sure required fields are populated
             if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals(""))) {
 
-                displayErrorMessage("Required field left blank");
+                displayPopupMessage("Required field left blank", "Error");
 
             } else
             {
@@ -298,7 +298,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-                    displayErrorMessage("'Email_info.txt' not found");
+                    displayPopupMessage("'Email_info.txt' not found", "Error");
                 }
             }
             //The following code populates the emailpreview information
@@ -327,7 +327,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-                    displayErrorMessage("'Companies.txt' not found");
+                    displayPopupMessage("'Companies.txt' not found", "Error");
                 }
             }
             //clears the text field
@@ -367,7 +367,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Companies.txt' not found");
+                displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
@@ -416,7 +416,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Email_info.txt' not found");
+                displayPopupMessage("'Email_info.txt' not found", "Error");
             }
         }
 
@@ -437,7 +437,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Companies.txt' not found");
+                displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
@@ -489,7 +489,7 @@ namespace SalesReportProject
                 catch (Exception ex)
                 {
                     //Error, could not send the message
-                    displayErrorMessage("" + ex);
+                    displayPopupMessage("Email not sent. Check internet connection and Email Account information.", "Error");
                 }
             }
             catch
@@ -498,8 +498,10 @@ namespace SalesReportProject
             }
         }
 
-        private void displayErrorMessage(string errorMessage){
+        private void displayPopupMessage(string errorMessage, string windowTitle)
+        {
             ErrorPopup error = new ErrorPopup();
+            error.Text = windowTitle;
             error.errorText = errorMessage;
             error.ShowDialog();
         }
