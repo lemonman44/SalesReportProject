@@ -468,10 +468,10 @@ namespace SalesReportProject
 
                 message.From = fromAddress;
 
-                message.Subject = "attach test";
+                message.Subject = emailSubject;
                 //Set IsBodyHtml to true means you can send HTML email.
                 message.IsBodyHtml = true;
-                message.Body = "<h1>your message body</h1>";
+                message.Body = emailBody;
 
                 //Attachment salesReport = new Attachment(file);
                 //message.Attachments.Add(salesReport);
