@@ -79,6 +79,7 @@ namespace SalesReportProject
             Settings_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
+            label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
 
             //the following code sets the locations of buttons and other controls to be more centered
             //and looking like they're in thoughtout out locations on the settingsPage panel
@@ -235,7 +236,6 @@ namespace SalesReportProject
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
             accountSettingsInfo.Location = new Point(0, 208 + 104 + 80);
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
-
         }
 
         private void accountsSettingsButton_Click(object sender, EventArgs e)
@@ -259,29 +259,47 @@ namespace SalesReportProject
         //changes the currently displayed panel from settings to menu
         private void Settings_Back_Button_Click(object sender, EventArgs e)
         {
-            settingsPage.Visible = false;
-            menuPage.Visible = true;
+            //if statement makes sure required fields are populated
+            if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals("")))
+            {
+
+                displayErrorMessage("Required field left blank");
+
+            }
+            else
+            {
+                settingsPage.Visible = false;
+                menuPage.Visible = true;
+            }
         }
         
         //takes every field in the email settings and overwrites the email_info file with it
         private void saveEmailDataButton_Click(object sender, EventArgs e)
         {
-            try
+            //if statement makes sure required fields are populated
+            if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals(""))) {
+
+                displayErrorMessage("Required field left blank");
+
+            } else
             {
-                using (StreamWriter saveNewEmailData = new StreamWriter("..\\..\\Email_info.txt", false))
+               try
                 {
-                    saveNewEmailData.WriteLine(emailAddressField.Text);
-                    saveNewEmailData.WriteLine(emailPasswordField.Text);
-                    saveNewEmailData.WriteLine(destinationAddressField.Text);
-                    saveNewEmailData.WriteLine(emailSubjectField.Text);
-                    saveNewEmailData.Write(emailBodyField.Text);
-                    saveNewEmailData.Close();
-                    //saveNewEmailData.Dispose();
+                    using (StreamWriter saveNewEmailData = new StreamWriter("..\\..\\Email_info.txt", false))
+                    {
+                        saveNewEmailData.WriteLine(emailAddressField.Text);
+                        saveNewEmailData.WriteLine(emailPasswordField.Text);
+                        saveNewEmailData.WriteLine(destinationAddressField.Text);
+                        saveNewEmailData.WriteLine(emailSubjectField.Text);
+                        saveNewEmailData.Write(emailBodyField.Text);
+                        saveNewEmailData.Close();
+                        //saveNewEmailData.Dispose();
+                    }
                 }
-            }
-            catch
-            {
-                displayErrorMessage("'Email_info.txt' not found");
+                catch
+                {
+                    displayErrorMessage("'Email_info.txt' not found");
+                }
             }
             //The following code populates the emailpreview information
             previewFromAddress.Text = "From: " + emailAddressField.Text;
