@@ -111,13 +111,18 @@ namespace SalesReportProject
             dataPreviewWindow.DoubleBuffered(true);
         }
 
+        private string csvFinder()
+        {
+            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
+            return csvFilePath;
+        }
+
         private void dataGridFiller() {
             String[] dataArray = new String[27];
-            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFil.csv";
             try
             {
                 //converts the csv file to an array and populates the datagrid with the array
-                string[] fileContent = File.ReadAllLines(csvFilePath);
+                string[] fileContent = File.ReadAllLines(csvFinder());
 
                 if (fileContent.Count() > 0)
                 {
@@ -129,6 +134,7 @@ namespace SalesReportProject
                         string[] rowData = fileContent[i].Split(',');
                         dataPreviewWindow.Rows.Add(rowData);
                     }
+                    displayPopupMessage("CSV file '" + csvFinder() + "' loaded successfully", "Success");
                 }
             }
             catch
@@ -145,10 +151,11 @@ namespace SalesReportProject
                 // a .csv file was selected, open it.
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    csvFilePath = openFileDialog1.FileName;
+                    string csvFileBrowse;
+                    csvFileBrowse = openFileDialog1.FileName;
                     
                     //Fills array based on correct CSV file path
-                    string[] fileContent = File.ReadAllLines(csvFilePath);
+                    string[] fileContent = File.ReadAllLines(csvFileBrowse);
 
                     if (fileContent.Count() > 0)
                     {
@@ -160,6 +167,7 @@ namespace SalesReportProject
                             string[] rowData = fileContent[i].Split(',');
                             dataPreviewWindow.Rows.Add(rowData);
                         }
+                        displayPopupMessage("CSV file loaded successfully", "Success");
                     }
                 }
             }
@@ -485,6 +493,8 @@ namespace SalesReportProject
                     {
                         smtpClient.Send(message);
                     }
+
+                    displayPopupMessage("Email Sent","Success");
                 }
                 catch (Exception ex)
                 {
