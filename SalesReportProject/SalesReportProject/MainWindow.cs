@@ -486,15 +486,15 @@ namespace SalesReportProject
                         smtpClient.Send(message);
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     //Error, could not send the message
-                    displayErrorMessage("Message not sent");
+                    displayErrorMessage("" + ex);
                 }
             }
             catch
             {
-
+                
             }
         }
 
