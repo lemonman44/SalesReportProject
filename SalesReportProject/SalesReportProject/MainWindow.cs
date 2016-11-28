@@ -111,13 +111,18 @@ namespace SalesReportProject
             dataPreviewWindow.DoubleBuffered(true);
         }
 
+        private string csvFinder()
+        {
+            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
+            return csvFilePath;
+        }
+
         private void dataGridFiller() {
             String[] dataArray = new String[27];
-            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
             try
             {
                 //converts the csv file to an array and populates the datagrid with the array
-                string[] fileContent = File.ReadAllLines(csvFilePath);
+                string[] fileContent = File.ReadAllLines(csvFinder());
 
                 if (fileContent.Count() > 0)
                 {
@@ -129,11 +134,12 @@ namespace SalesReportProject
                         string[] rowData = fileContent[i].Split(',');
                         dataPreviewWindow.Rows.Add(rowData);
                     }
+                    displayPopupMessage("CSV file '" + csvFinder() + "' loaded successfully", "Success");
                 }
             }
             catch
             {
-                displayErrorMessage("CSV file not found");
+                displayPopupMessage("CSV file not found", "Error");
 
                 // Displays an OpenFileDialog so the user can select csv file
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -145,10 +151,11 @@ namespace SalesReportProject
                 // a .csv file was selected, open it.
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    csvFilePath = openFileDialog1.FileName;
+                    string csvFileBrowse;
+                    csvFileBrowse = openFileDialog1.FileName;
                     
                     //Fills array based on correct CSV file path
-                    string[] fileContent = File.ReadAllLines(csvFilePath);
+                    string[] fileContent = File.ReadAllLines(csvFileBrowse);
 
                     if (fileContent.Count() > 0)
                     {
@@ -160,6 +167,7 @@ namespace SalesReportProject
                             string[] rowData = fileContent[i].Split(',');
                             dataPreviewWindow.Rows.Add(rowData);
                         }
+                        displayPopupMessage("CSV file loaded successfully", "Success");
                     }
                 }
             }
@@ -263,7 +271,7 @@ namespace SalesReportProject
             if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals("")))
             {
 
-                displayErrorMessage("Required field left blank");
+                displayPopupMessage("Required field left blank", "Error");
 
             }
             else
@@ -279,7 +287,7 @@ namespace SalesReportProject
             //if statement makes sure required fields are populated
             if ((emailAddressField.Text.Equals("")) || (emailPasswordField.Text.Equals("")) || (destinationAddressField.Text.Equals(""))) {
 
-                displayErrorMessage("Required field left blank");
+                displayPopupMessage("Required field left blank", "Error");
 
             } else
             {
@@ -298,7 +306,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-                    displayErrorMessage("'Email_info.txt' not found");
+                    displayPopupMessage("'Email_info.txt' not found", "Error");
                 }
             }
             //The following code populates the emailpreview information
@@ -327,7 +335,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-                    displayErrorMessage("'Companies.txt' not found");
+                    displayPopupMessage("'Companies.txt' not found", "Error");
                 }
             }
             //clears the text field
@@ -367,7 +375,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Companies.txt' not found");
+                displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
@@ -416,7 +424,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Email_info.txt' not found");
+                displayPopupMessage("'Email_info.txt' not found", "Error");
             }
         }
 
@@ -437,7 +445,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayErrorMessage("'Companies.txt' not found");
+                displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
@@ -485,11 +493,13 @@ namespace SalesReportProject
                     {
                         smtpClient.Send(message);
                     }
+
+                    displayPopupMessage("Email Sent","Success");
                 }
                 catch (Exception ex)
                 {
                     //Error, could not send the message
-                    displayErrorMessage("" + ex);
+                    displayPopupMessage("Email not sent. Check internet connection and Email Account information.", "Error");
                 }
             }
             catch
@@ -498,8 +508,10 @@ namespace SalesReportProject
             }
         }
 
-        private void displayErrorMessage(string errorMessage){
+        private void displayPopupMessage(string errorMessage, string windowTitle)
+        {
             ErrorPopup error = new ErrorPopup();
+            error.Text = windowTitle;
             error.errorText = errorMessage;
             error.ShowDialog();
         }
