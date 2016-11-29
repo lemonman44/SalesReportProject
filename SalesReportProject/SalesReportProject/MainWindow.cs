@@ -113,7 +113,26 @@ namespace SalesReportProject
 
         private string csvFinder()
         {
-            string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
+            string fileName = "";
+            string distributorID = "ABC01";
+            DateTime now = DateTime.Now;
+
+            if (now.Month < 10)
+            {
+                for (int r = 0; r < 31; r++)
+                {
+                    fileName = distributorID + " 0" + now.Month + "-" + (r < 10 ? "0":"") + r;
+                    //executes and throws exception on loop 0
+                }
+            } else
+            {
+                for (int r = 0; r < 31; r++)
+                {
+                    fileName = distributorID + " " + now.Month + "-" + (r < 10 ? "0" : "") + r;
+                }
+            }
+            string csvFilePath = String.Join("", Directory.GetFiles("..\\..\\CSVFiles\\" + fileName + ".csv"));
+            //string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
             return csvFilePath;
         }
 
@@ -128,6 +147,7 @@ namespace SalesReportProject
                 {
                     //Create data table columns
                     string[] columns = fileContent[0].Split(',');
+
                     //Adds row data
                     for (int i = 1; i < fileContent.Count(); i++)
                     {
