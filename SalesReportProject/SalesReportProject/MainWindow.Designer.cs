@@ -155,7 +155,7 @@
             // 
             // previewEmailInfo
             // 
-            this.previewEmailInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.previewEmailInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.previewEmailInfo.Controls.Add(this.sendEmailButton);
             this.previewEmailInfo.Controls.Add(this.previewFromAddress);
             this.previewEmailInfo.Controls.Add(this.previewToAddress);
