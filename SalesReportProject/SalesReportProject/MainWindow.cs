@@ -113,26 +113,19 @@ namespace SalesReportProject
 
         private string csvFinder()
         {
-            string fileName = "";
-            string distributorID = "ABC01";
-            DateTime now = DateTime.Now;
+            string[] files = Directory.GetFiles("..\\..\\CSVFiles\\");
+            var fileCount = (from file in Directory.EnumerateFiles(@"..\\..\\CSVFiles\\", "*.csv", SearchOption.AllDirectories) select file).Count();
+            string newest = files[0];
 
-            if (now.Month < 10)
-            {
-                for (int r = 0; r < 31; r++)
+            for (int i = 0; i < fileCount; i ++) {
+                if (File.GetLastWriteTime(files[i]) > File.GetLastWriteTime(newest))
                 {
-                    fileName = distributorID + " 0" + now.Month + "-" + (r < 10 ? "0":"") + r;
-                    //executes and throws exception on loop 0
-                }
-            } else
-            {
-                for (int r = 0; r < 31; r++)
-                {
-                    fileName = distributorID + " " + now.Month + "-" + (r < 10 ? "0" : "") + r;
+                    newest = files[i];
                 }
             }
-            string csvFilePath = String.Join("", Directory.GetFiles("..\\..\\CSVFiles\\" + fileName + ".csv"));
-            //string csvFilePath = "..\\..\\CSVFiles\\csvSampleFile.csv";
+
+
+            string csvFilePath = newest;
             return csvFilePath;
         }
 
@@ -154,7 +147,7 @@ namespace SalesReportProject
                         string[] rowData = fileContent[i].Split(',');
                         dataPreviewWindow.Rows.Add(rowData);
                     }
-                    displayPopupMessage("CSV file '" + csvFinder() + "' loaded successfully", "Success");
+                    displayPopupMessage("CSV file '" + csvFinder().Substring(csvFinder().LastIndexOf("\\")  + 1) + "' loaded successfully", "Success");
                 }
             }
             catch
