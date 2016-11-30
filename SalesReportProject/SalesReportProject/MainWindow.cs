@@ -30,6 +30,8 @@ namespace SalesReportProject
         private string emailDestination;
         private string emailSubject;
         private string emailBody;
+        private string csvFilePath;
+        private bool dataGridPopulated = false;
 
         public MainWindow()
         {
@@ -156,6 +158,7 @@ namespace SalesReportProject
                     }
                     displayPopupMessage("CSV file '" + csvFinder() + "' loaded successfully", "Success");
                 }
+                dataGridPopulated = true;
             }
             catch
             {
@@ -171,11 +174,10 @@ namespace SalesReportProject
                 // a .csv file was selected, open it.
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    string csvFileBrowse;
-                    csvFileBrowse = openFileDialog1.FileName;
-                    
+                    csvFilePath = openFileDialog1.FileName;
+                    Console.WriteLine(csvFilePath);
                     //Fills array based on correct CSV file path
-                    string[] fileContent = File.ReadAllLines(csvFileBrowse);
+                    string[] fileContent = File.ReadAllLines(csvFilePath);
 
                     if (fileContent.Count() > 0)
                     {
@@ -188,6 +190,7 @@ namespace SalesReportProject
                             dataPreviewWindow.Rows.Add(rowData);
                         }
                         displayPopupMessage("CSV file loaded successfully", "Success");
+                        dataGridPopulated = true;
                     }
                 }
             }
@@ -239,10 +242,11 @@ namespace SalesReportProject
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
             
-            //calls to populate the dataPreviewWindow
-            dataGridFiller();
-
-
+            //calls to populate the dataPreviewWindow if not already populated
+            if (!dataGridPopulated)
+            {
+                dataGridFiller();
+            }
         }
 
         //this section is code that runs when menuToSettingsButton is clicked
@@ -501,8 +505,8 @@ namespace SalesReportProject
                 message.IsBodyHtml = true;
                 message.Body = emailBody;
 
-                //Attachment salesReport = new Attachment(file);
-                //message.Attachments.Add(salesReport);
+                Attachment salesReport = new Attachment(csvFilePath);
+                message.Attachments.Add(salesReport);
 
                 message.To.Add(emailDestination);
 
@@ -522,9 +526,9 @@ namespace SalesReportProject
                     displayPopupMessage("Email not sent. Check internet connection and Email Account information.", "Error");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                
+                Console.WriteLine("" + ex);
             }
         }
 
