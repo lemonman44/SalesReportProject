@@ -146,7 +146,6 @@
             // 
             this.previewAndSendDataPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
-            this.previewAndSendDataPage.Controls.Add(this.Preview_Back_Button);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
             this.previewAndSendDataPage.Location = new System.Drawing.Point(2, 513);
             this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(2);
@@ -156,18 +155,20 @@
             // 
             // previewEmailInfo
             // 
+            this.previewEmailInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.previewEmailInfo.Controls.Add(this.sendEmailButton);
             this.previewEmailInfo.Controls.Add(this.previewFromAddress);
             this.previewEmailInfo.Controls.Add(this.previewToAddress);
-            this.previewEmailInfo.Location = new System.Drawing.Point(653, 146);
+            this.previewEmailInfo.Controls.Add(this.Preview_Back_Button);
+            this.previewEmailInfo.Location = new System.Drawing.Point(105, 18);
             this.previewEmailInfo.Margin = new System.Windows.Forms.Padding(2);
             this.previewEmailInfo.Name = "previewEmailInfo";
-            this.previewEmailInfo.Size = new System.Drawing.Size(299, 32);
+            this.previewEmailInfo.Size = new System.Drawing.Size(500, 32);
             this.previewEmailInfo.TabIndex = 1;
             // 
             // sendEmailButton
             // 
-            this.sendEmailButton.Location = new System.Drawing.Point(6, 2);
+            this.sendEmailButton.Location = new System.Drawing.Point(70, 4);
             this.sendEmailButton.Margin = new System.Windows.Forms.Padding(2);
             this.sendEmailButton.Name = "sendEmailButton";
             this.sendEmailButton.Size = new System.Drawing.Size(80, 26);
@@ -179,7 +180,7 @@
             // previewFromAddress
             // 
             this.previewFromAddress.AutoSize = true;
-            this.previewFromAddress.Location = new System.Drawing.Point(96, 2);
+            this.previewFromAddress.Location = new System.Drawing.Point(154, 4);
             this.previewFromAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.previewFromAddress.Name = "previewFromAddress";
             this.previewFromAddress.Size = new System.Drawing.Size(35, 13);
@@ -189,7 +190,7 @@
             // previewToAddress
             // 
             this.previewToAddress.AutoSize = true;
-            this.previewToAddress.Location = new System.Drawing.Point(96, 15);
+            this.previewToAddress.Location = new System.Drawing.Point(154, 17);
             this.previewToAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.previewToAddress.Name = "previewToAddress";
             this.previewToAddress.Size = new System.Drawing.Size(35, 13);
@@ -198,10 +199,11 @@
             // 
             // Preview_Back_Button
             // 
-            this.Preview_Back_Button.Location = new System.Drawing.Point(4, 4);
+            this.Preview_Back_Button.Location = new System.Drawing.Point(335, 4);
+            this.Preview_Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Preview_Back_Button.Name = "Preview_Back_Button";
-            this.Preview_Back_Button.Size = new System.Drawing.Size(75, 23);
-            this.Preview_Back_Button.TabIndex = 1;
+            this.Preview_Back_Button.Size = new System.Drawing.Size(80, 26);
+            this.Preview_Back_Button.TabIndex = 2;
             this.Preview_Back_Button.Text = "Back";
             this.Preview_Back_Button.UseVisualStyleBackColor = true;
             this.Preview_Back_Button.Click += new System.EventHandler(this.Preview_Back_Button_Click);
@@ -678,7 +680,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 548);
+            this.ClientSize = new System.Drawing.Size(1408, 739);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
