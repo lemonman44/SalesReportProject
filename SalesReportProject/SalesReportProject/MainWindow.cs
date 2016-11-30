@@ -39,9 +39,6 @@ namespace SalesReportProject
         //this section is some code that will run before MainWindow is visible to the user
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            //starts the timer used for many functions throughout the program
-            
-
             //the following code decides which panel is visible on startup and which panels are invisible
             menuPage.Visible = true;
             previewAndSendDataPage.Visible = false;
@@ -74,8 +71,6 @@ namespace SalesReportProject
                  = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
-            Preview_Back_Button.Location
-                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             Settings_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
@@ -180,10 +175,6 @@ namespace SalesReportProject
                 = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
-            Preview_Back_Button.Location
-                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
-            Settings_Back_Button.Location
-                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
 
