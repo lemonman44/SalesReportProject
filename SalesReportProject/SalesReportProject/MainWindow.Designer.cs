@@ -105,38 +105,39 @@
             this.menuPage.Controls.Add(this.pictureBox1);
             this.menuPage.Controls.Add(this.menuToSettingsButton);
             this.menuPage.Controls.Add(this.menuToPreviewButton);
-            this.menuPage.Location = new System.Drawing.Point(2, 1);
-            this.menuPage.Margin = new System.Windows.Forms.Padding(2);
+            this.menuPage.Location = new System.Drawing.Point(4, 2);
+            this.menuPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuPage.Name = "menuPage";
-            this.menuPage.Size = new System.Drawing.Size(738, 511);
+            this.menuPage.Size = new System.Drawing.Size(1476, 983);
             this.menuPage.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SalesReportProject.Properties.Resources.l;
-            this.pictureBox1.Location = new System.Drawing.Point(224, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(448, 169);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(668, 335);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // menuToSettingsButton
             // 
             this.menuToSettingsButton.Image = global::SalesReportProject.Properties.Resources._1;
-            this.menuToSettingsButton.Location = new System.Drawing.Point(693, 2);
-            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.menuToSettingsButton.Location = new System.Drawing.Point(1386, 4);
+            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
-            this.menuToSettingsButton.Size = new System.Drawing.Size(27, 26);
+            this.menuToSettingsButton.Size = new System.Drawing.Size(54, 50);
             this.menuToSettingsButton.TabIndex = 1;
             this.menuToSettingsButton.UseVisualStyleBackColor = true;
             this.menuToSettingsButton.Click += new System.EventHandler(this.menuToSettingsButton_Click);
             // 
             // menuToPreviewButton
             // 
-            this.menuToPreviewButton.Location = new System.Drawing.Point(577, 457);
-            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(1);
+            this.menuToPreviewButton.Location = new System.Drawing.Point(1154, 879);
+            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
-            this.menuToPreviewButton.Size = new System.Drawing.Size(105, 22);
+            this.menuToPreviewButton.Size = new System.Drawing.Size(210, 42);
             this.menuToPreviewButton.TabIndex = 0;
             this.menuToPreviewButton.Text = "Preview Report";
             this.menuToPreviewButton.UseVisualStyleBackColor = true;
@@ -147,10 +148,10 @@
             this.previewAndSendDataPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
-            this.previewAndSendDataPage.Location = new System.Drawing.Point(2, 513);
-            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(2);
+            this.previewAndSendDataPage.Location = new System.Drawing.Point(4, 987);
+            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
-            this.previewAndSendDataPage.Size = new System.Drawing.Size(738, 399);
+            this.previewAndSendDataPage.Size = new System.Drawing.Size(1476, 767);
             this.previewAndSendDataPage.TabIndex = 0;
             // 
             // previewEmailInfo
@@ -160,18 +161,18 @@
             this.previewEmailInfo.Controls.Add(this.previewFromAddress);
             this.previewEmailInfo.Controls.Add(this.previewToAddress);
             this.previewEmailInfo.Controls.Add(this.Preview_Back_Button);
-            this.previewEmailInfo.Location = new System.Drawing.Point(105, 18);
-            this.previewEmailInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.previewEmailInfo.Location = new System.Drawing.Point(210, 35);
+            this.previewEmailInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.previewEmailInfo.Name = "previewEmailInfo";
-            this.previewEmailInfo.Size = new System.Drawing.Size(500, 32);
+            this.previewEmailInfo.Size = new System.Drawing.Size(1000, 62);
             this.previewEmailInfo.TabIndex = 1;
             // 
             // sendEmailButton
             // 
-            this.sendEmailButton.Location = new System.Drawing.Point(70, 4);
-            this.sendEmailButton.Margin = new System.Windows.Forms.Padding(2);
+            this.sendEmailButton.Location = new System.Drawing.Point(140, 8);
+            this.sendEmailButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sendEmailButton.Name = "sendEmailButton";
-            this.sendEmailButton.Size = new System.Drawing.Size(80, 26);
+            this.sendEmailButton.Size = new System.Drawing.Size(160, 50);
             this.sendEmailButton.TabIndex = 2;
             this.sendEmailButton.Text = "Send";
             this.sendEmailButton.UseVisualStyleBackColor = true;
@@ -180,29 +181,29 @@
             // previewFromAddress
             // 
             this.previewFromAddress.AutoSize = true;
-            this.previewFromAddress.Location = new System.Drawing.Point(154, 4);
-            this.previewFromAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.previewFromAddress.Location = new System.Drawing.Point(308, 8);
+            this.previewFromAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.previewFromAddress.Name = "previewFromAddress";
-            this.previewFromAddress.Size = new System.Drawing.Size(35, 13);
+            this.previewFromAddress.Size = new System.Drawing.Size(70, 25);
             this.previewFromAddress.TabIndex = 3;
             this.previewFromAddress.Text = "label1";
             // 
             // previewToAddress
             // 
             this.previewToAddress.AutoSize = true;
-            this.previewToAddress.Location = new System.Drawing.Point(154, 17);
-            this.previewToAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.previewToAddress.Location = new System.Drawing.Point(308, 33);
+            this.previewToAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.previewToAddress.Name = "previewToAddress";
-            this.previewToAddress.Size = new System.Drawing.Size(35, 13);
+            this.previewToAddress.Size = new System.Drawing.Size(70, 25);
             this.previewToAddress.TabIndex = 1;
             this.previewToAddress.Text = "label2";
             // 
             // Preview_Back_Button
             // 
-            this.Preview_Back_Button.Location = new System.Drawing.Point(335, 4);
-            this.Preview_Back_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Preview_Back_Button.Location = new System.Drawing.Point(670, 8);
+            this.Preview_Back_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Preview_Back_Button.Name = "Preview_Back_Button";
-            this.Preview_Back_Button.Size = new System.Drawing.Size(80, 26);
+            this.Preview_Back_Button.Size = new System.Drawing.Size(160, 50);
             this.Preview_Back_Button.TabIndex = 2;
             this.Preview_Back_Button.Text = "Back";
             this.Preview_Back_Button.UseVisualStyleBackColor = true;
@@ -242,10 +243,11 @@
             this.Distribution_Center_ID,
             this.Substitution_Indicator,
             this.GTIN});
-            this.dataPreviewWindow.Location = new System.Drawing.Point(58, 48);
+            this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
+            this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
             this.dataPreviewWindow.ReadOnly = true;
-            this.dataPreviewWindow.Size = new System.Drawing.Size(500, 364);
+            this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
             this.dataPreviewWindow.TabIndex = 0;
             // 
             // Distributor_ID_Number
@@ -418,27 +420,29 @@
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
             this.settingsPage.Controls.Add(this.accountSettingsInfo);
             this.settingsPage.Controls.Add(this.settingsLabel);
-            this.settingsPage.Location = new System.Drawing.Point(744, 513);
-            this.settingsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.settingsPage.Location = new System.Drawing.Point(1488, 987);
+            this.settingsPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingsPage.Name = "settingsPage";
-            this.settingsPage.Size = new System.Drawing.Size(738, 399);
+            this.settingsPage.Size = new System.Drawing.Size(1476, 767);
             this.settingsPage.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(309, 18);
+            this.label1.Location = new System.Drawing.Point(618, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 31);
+            this.label1.Size = new System.Drawing.Size(223, 63);
             this.label1.TabIndex = 5;
             this.label1.Text = "Settings";
             // 
             // Settings_Back_Button
             // 
             this.Settings_Back_Button.Location = new System.Drawing.Point(0, 0);
+            this.Settings_Back_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Settings_Back_Button.Name = "Settings_Back_Button";
-            this.Settings_Back_Button.Size = new System.Drawing.Size(75, 23);
+            this.Settings_Back_Button.Size = new System.Drawing.Size(150, 44);
             this.Settings_Back_Button.TabIndex = 4;
             this.Settings_Back_Button.Text = "Back";
             this.Settings_Back_Button.UseVisualStyleBackColor = true;
@@ -459,57 +463,57 @@
             this.emailSettingsInfo.Controls.Add(this.emailSettingsButton);
             this.emailSettingsInfo.Controls.Add(this.emailPasswordLabel);
             this.emailSettingsInfo.Controls.Add(this.emailAddressLabel);
-            this.emailSettingsInfo.Location = new System.Drawing.Point(0, 104);
-            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.emailSettingsInfo.Location = new System.Drawing.Point(0, 200);
+            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailSettingsInfo.Name = "emailSettingsInfo";
-            this.emailSettingsInfo.Size = new System.Drawing.Size(736, 52);
+            this.emailSettingsInfo.Size = new System.Drawing.Size(1472, 100);
             this.emailSettingsInfo.TabIndex = 1;
             // 
             // emailBodyField
             // 
             this.emailBodyField.AcceptsReturn = true;
             this.emailBodyField.AcceptsTab = true;
-            this.emailBodyField.Location = new System.Drawing.Point(110, 160);
-            this.emailBodyField.Margin = new System.Windows.Forms.Padding(2);
+            this.emailBodyField.Location = new System.Drawing.Point(220, 308);
+            this.emailBodyField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailBodyField.Multiline = true;
             this.emailBodyField.Name = "emailBodyField";
-            this.emailBodyField.Size = new System.Drawing.Size(232, 83);
+            this.emailBodyField.Size = new System.Drawing.Size(460, 156);
             this.emailBodyField.TabIndex = 15;
             // 
             // emailSubjectField
             // 
-            this.emailSubjectField.Location = new System.Drawing.Point(110, 132);
-            this.emailSubjectField.Margin = new System.Windows.Forms.Padding(2);
+            this.emailSubjectField.Location = new System.Drawing.Point(220, 254);
+            this.emailSubjectField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailSubjectField.Name = "emailSubjectField";
-            this.emailSubjectField.Size = new System.Drawing.Size(232, 20);
+            this.emailSubjectField.Size = new System.Drawing.Size(460, 31);
             this.emailSubjectField.TabIndex = 14;
             // 
             // emailBodyLabel
             // 
             this.emailBodyLabel.AutoSize = true;
-            this.emailBodyLabel.Location = new System.Drawing.Point(2, 162);
-            this.emailBodyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailBodyLabel.Location = new System.Drawing.Point(4, 312);
+            this.emailBodyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailBodyLabel.Name = "emailBodyLabel";
-            this.emailBodyLabel.Size = new System.Drawing.Size(62, 13);
+            this.emailBodyLabel.Size = new System.Drawing.Size(126, 25);
             this.emailBodyLabel.TabIndex = 13;
             this.emailBodyLabel.Text = "Email Body:";
             // 
             // emailSubjectLabel
             // 
             this.emailSubjectLabel.AutoSize = true;
-            this.emailSubjectLabel.Location = new System.Drawing.Point(2, 135);
-            this.emailSubjectLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailSubjectLabel.Location = new System.Drawing.Point(4, 260);
+            this.emailSubjectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailSubjectLabel.Name = "emailSubjectLabel";
-            this.emailSubjectLabel.Size = new System.Drawing.Size(74, 13);
+            this.emailSubjectLabel.Size = new System.Drawing.Size(149, 25);
             this.emailSubjectLabel.TabIndex = 12;
             this.emailSubjectLabel.Text = "Email Subject:";
             // 
             // saveEmailDataButton
             // 
-            this.saveEmailDataButton.Location = new System.Drawing.Point(4, 249);
-            this.saveEmailDataButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveEmailDataButton.Location = new System.Drawing.Point(8, 479);
+            this.saveEmailDataButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveEmailDataButton.Name = "saveEmailDataButton";
-            this.saveEmailDataButton.Size = new System.Drawing.Size(45, 21);
+            this.saveEmailDataButton.Size = new System.Drawing.Size(90, 40);
             this.saveEmailDataButton.TabIndex = 11;
             this.saveEmailDataButton.Text = "Save";
             this.saveEmailDataButton.UseVisualStyleBackColor = true;
@@ -517,36 +521,36 @@
             // 
             // destinationAddressField
             // 
-            this.destinationAddressField.Location = new System.Drawing.Point(110, 106);
-            this.destinationAddressField.Margin = new System.Windows.Forms.Padding(2);
+            this.destinationAddressField.Location = new System.Drawing.Point(220, 204);
+            this.destinationAddressField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.destinationAddressField.Name = "destinationAddressField";
-            this.destinationAddressField.Size = new System.Drawing.Size(232, 20);
+            this.destinationAddressField.Size = new System.Drawing.Size(460, 31);
             this.destinationAddressField.TabIndex = 7;
             // 
             // destinationAddressLabel
             // 
             this.destinationAddressLabel.AutoSize = true;
-            this.destinationAddressLabel.Location = new System.Drawing.Point(2, 108);
-            this.destinationAddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.destinationAddressLabel.Location = new System.Drawing.Point(4, 208);
+            this.destinationAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.destinationAddressLabel.Name = "destinationAddressLabel";
-            this.destinationAddressLabel.Size = new System.Drawing.Size(104, 13);
+            this.destinationAddressLabel.Size = new System.Drawing.Size(211, 25);
             this.destinationAddressLabel.TabIndex = 10;
             this.destinationAddressLabel.Text = "Destination Address:";
             // 
             // emailAddressField
             // 
-            this.emailAddressField.Location = new System.Drawing.Point(110, 54);
-            this.emailAddressField.Margin = new System.Windows.Forms.Padding(2);
+            this.emailAddressField.Location = new System.Drawing.Point(220, 104);
+            this.emailAddressField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailAddressField.Name = "emailAddressField";
-            this.emailAddressField.Size = new System.Drawing.Size(232, 20);
+            this.emailAddressField.Size = new System.Drawing.Size(460, 31);
             this.emailAddressField.TabIndex = 5;
             // 
             // emailPasswordField
             // 
-            this.emailPasswordField.Location = new System.Drawing.Point(110, 79);
-            this.emailPasswordField.Margin = new System.Windows.Forms.Padding(2);
+            this.emailPasswordField.Location = new System.Drawing.Point(220, 152);
+            this.emailPasswordField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailPasswordField.Name = "emailPasswordField";
-            this.emailPasswordField.Size = new System.Drawing.Size(232, 20);
+            this.emailPasswordField.Size = new System.Drawing.Size(460, 31);
             this.emailPasswordField.TabIndex = 6;
             this.emailPasswordField.UseSystemPasswordChar = true;
             // 
@@ -559,9 +563,9 @@
             this.emailSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emailSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailSettingsButton.Location = new System.Drawing.Point(0, 0);
-            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.emailSettingsButton.Name = "emailSettingsButton";
-            this.emailSettingsButton.Size = new System.Drawing.Size(736, 52);
+            this.emailSettingsButton.Size = new System.Drawing.Size(1472, 100);
             this.emailSettingsButton.TabIndex = 2;
             this.emailSettingsButton.Text = "Email";
             this.emailSettingsButton.UseVisualStyleBackColor = false;
@@ -570,20 +574,20 @@
             // emailPasswordLabel
             // 
             this.emailPasswordLabel.AutoSize = true;
-            this.emailPasswordLabel.Location = new System.Drawing.Point(2, 81);
-            this.emailPasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailPasswordLabel.Location = new System.Drawing.Point(4, 156);
+            this.emailPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailPasswordLabel.Name = "emailPasswordLabel";
-            this.emailPasswordLabel.Size = new System.Drawing.Size(91, 13);
+            this.emailPasswordLabel.Size = new System.Drawing.Size(186, 25);
             this.emailPasswordLabel.TabIndex = 9;
             this.emailPasswordLabel.Text = "Email\'s Password:";
             // 
             // emailAddressLabel
             // 
             this.emailAddressLabel.AutoSize = true;
-            this.emailAddressLabel.Location = new System.Drawing.Point(2, 54);
-            this.emailAddressLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailAddressLabel.Location = new System.Drawing.Point(4, 104);
+            this.emailAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailAddressLabel.Name = "emailAddressLabel";
-            this.emailAddressLabel.Size = new System.Drawing.Size(102, 13);
+            this.emailAddressLabel.Size = new System.Drawing.Size(211, 25);
             this.emailAddressLabel.TabIndex = 8;
             this.emailAddressLabel.Text = "From Email Address:";
             // 
@@ -595,10 +599,10 @@
             this.accountSettingsInfo.Controls.Add(this.addAccountsButton);
             this.accountSettingsInfo.Controls.Add(this.accountDisplayBox);
             this.accountSettingsInfo.Controls.Add(this.accountsSettingsButton);
-            this.accountSettingsInfo.Location = new System.Drawing.Point(0, 156);
-            this.accountSettingsInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.accountSettingsInfo.Location = new System.Drawing.Point(0, 300);
+            this.accountSettingsInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accountSettingsInfo.Name = "accountSettingsInfo";
-            this.accountSettingsInfo.Size = new System.Drawing.Size(736, 52);
+            this.accountSettingsInfo.Size = new System.Drawing.Size(1472, 100);
             this.accountSettingsInfo.TabIndex = 3;
             // 
             // subtractAccountsButton
@@ -606,10 +610,10 @@
             this.subtractAccountsButton.BackColor = System.Drawing.SystemColors.Control;
             this.subtractAccountsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.subtractAccountsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.subtractAccountsButton.Location = new System.Drawing.Point(244, 187);
-            this.subtractAccountsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.subtractAccountsButton.Location = new System.Drawing.Point(488, 360);
+            this.subtractAccountsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.subtractAccountsButton.Name = "subtractAccountsButton";
-            this.subtractAccountsButton.Size = new System.Drawing.Size(38, 20);
+            this.subtractAccountsButton.Size = new System.Drawing.Size(76, 38);
             this.subtractAccountsButton.TabIndex = 6;
             this.subtractAccountsButton.Text = "--";
             this.subtractAccountsButton.UseVisualStyleBackColor = false;
@@ -617,10 +621,10 @@
             // 
             // addAccountTextField
             // 
-            this.addAccountTextField.Location = new System.Drawing.Point(41, 187);
-            this.addAccountTextField.Margin = new System.Windows.Forms.Padding(2);
+            this.addAccountTextField.Location = new System.Drawing.Point(82, 360);
+            this.addAccountTextField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addAccountTextField.Name = "addAccountTextField";
-            this.addAccountTextField.Size = new System.Drawing.Size(164, 20);
+            this.addAccountTextField.Size = new System.Drawing.Size(324, 31);
             this.addAccountTextField.TabIndex = 5;
             this.addAccountTextField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addAccountTextField_KeyDown);
             // 
@@ -629,10 +633,10 @@
             this.addAccountsButton.BackColor = System.Drawing.SystemColors.Control;
             this.addAccountsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.addAccountsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addAccountsButton.Location = new System.Drawing.Point(4, 187);
-            this.addAccountsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addAccountsButton.Location = new System.Drawing.Point(8, 360);
+            this.addAccountsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addAccountsButton.Name = "addAccountsButton";
-            this.addAccountsButton.Size = new System.Drawing.Size(38, 20);
+            this.addAccountsButton.Size = new System.Drawing.Size(76, 38);
             this.addAccountsButton.TabIndex = 4;
             this.addAccountsButton.Text = "+";
             this.addAccountsButton.UseVisualStyleBackColor = false;
@@ -644,10 +648,10 @@
             this.accountDisplayBox.CheckOnClick = true;
             this.accountDisplayBox.Font = new System.Drawing.Font("Arial", 10F);
             this.accountDisplayBox.FormattingEnabled = true;
-            this.accountDisplayBox.Location = new System.Drawing.Point(4, 56);
-            this.accountDisplayBox.Margin = new System.Windows.Forms.Padding(2);
+            this.accountDisplayBox.Location = new System.Drawing.Point(8, 108);
+            this.accountDisplayBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accountDisplayBox.Name = "accountDisplayBox";
-            this.accountDisplayBox.Size = new System.Drawing.Size(280, 94);
+            this.accountDisplayBox.Size = new System.Drawing.Size(556, 169);
             this.accountDisplayBox.Sorted = true;
             this.accountDisplayBox.TabIndex = 3;
             // 
@@ -659,9 +663,9 @@
             this.accountsSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accountsSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountsSettingsButton.Location = new System.Drawing.Point(0, 0);
-            this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.accountsSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.accountsSettingsButton.Name = "accountsSettingsButton";
-            this.accountsSettingsButton.Size = new System.Drawing.Size(736, 52);
+            this.accountsSettingsButton.Size = new System.Drawing.Size(1472, 100);
             this.accountsSettingsButton.TabIndex = 2;
             this.accountsSettingsButton.Text = "Accounts";
             this.accountsSettingsButton.UseVisualStyleBackColor = false;
@@ -670,22 +674,22 @@
             // settingsLabel
             // 
             this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Location = new System.Drawing.Point(225, 0);
-            this.settingsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.settingsLabel.Location = new System.Drawing.Point(450, 0);
+            this.settingsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(0, 13);
+            this.settingsLabel.Size = new System.Drawing.Size(0, 25);
             this.settingsLabel.TabIndex = 2;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 739);
+            this.ClientSize = new System.Drawing.Size(1635, 933);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainWindow";
             this.Text = "Sales Report App";
             this.Load += new System.EventHandler(this.MainWindow_Load);
