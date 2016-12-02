@@ -122,7 +122,7 @@ namespace SalesReportProject
             }
 
 
-            string csvFilePath = newest;
+            csvFilePath = newest;
             return csvFilePath;
         }
 
