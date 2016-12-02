@@ -199,6 +199,8 @@ namespace SalesReportProject
                 = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+            Settings_Back_Button.Location
+                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
 
