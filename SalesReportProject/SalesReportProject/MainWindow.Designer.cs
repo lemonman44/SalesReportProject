@@ -89,6 +89,7 @@
             this.accountDisplayBox = new System.Windows.Forms.CheckedListBox();
             this.accountsSettingsButton = new System.Windows.Forms.Button();
             this.settingsLabel = new System.Windows.Forms.Label();
+            this.Preview_Browse_Button = new System.Windows.Forms.Button();
             this.menuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewAndSendDataPage.SuspendLayout();
@@ -145,6 +146,7 @@
             // previewAndSendDataPage
             // 
             this.previewAndSendDataPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.previewAndSendDataPage.Controls.Add(this.Preview_Browse_Button);
             this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
             this.previewAndSendDataPage.Location = new System.Drawing.Point(2, 513);
@@ -676,17 +678,27 @@
             this.settingsLabel.Size = new System.Drawing.Size(0, 13);
             this.settingsLabel.TabIndex = 2;
             // 
+            // Preview_Browse_Button
+            // 
+            this.Preview_Browse_Button.Location = new System.Drawing.Point(645, 12);
+            this.Preview_Browse_Button.Name = "Preview_Browse_Button";
+            this.Preview_Browse_Button.Size = new System.Drawing.Size(75, 23);
+            this.Preview_Browse_Button.TabIndex = 2;
+            this.Preview_Browse_Button.Text = "Browse";
+            this.Preview_Browse_Button.UseVisualStyleBackColor = true;
+            this.Preview_Browse_Button.Click += new System.EventHandler(this.Preview_Browse_Button_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 412);
+            this.ClientSize = new System.Drawing.Size(684, 412);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(550, 450);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "MainWindow";
             this.Text = "Sales Report App";
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -770,6 +782,7 @@
         private System.Windows.Forms.TextBox emailSubjectField;
         private System.Windows.Forms.Label emailBodyLabel;
         private System.Windows.Forms.Label emailSubjectLabel;
+        private System.Windows.Forms.Button Preview_Browse_Button;
     }
 }
 
