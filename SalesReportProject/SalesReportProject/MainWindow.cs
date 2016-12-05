@@ -77,6 +77,7 @@ namespace SalesReportProject
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
+            
 
             Preview_Browse_Button.Location = new Point(ClientSize.Width - 142, 18);
 
@@ -106,6 +107,7 @@ namespace SalesReportProject
                 ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
             previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
                 dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
+            fileNamePreviewLabel.Location = new Point(dataPreviewWindow.Location.X, dataPreviewWindow.Location.Y - fileNamePreviewLabel.Height - 10);
 
             dataPreviewWindow.DoubleBuffered(true);
         }
@@ -134,20 +136,21 @@ namespace SalesReportProject
             {
                 //converts the csv file to an array and populates the datagrid with the array
                 string[] fileContent = File.ReadAllLines(csvFinder());
+                csvFilePath = csvFinder();
 
                 if (fileContent.Count() > 0)
                 {
-                    //Create data table columns
-                    string[] columns = fileContent[0].Split(',');
 
                     //Adds row data
-                    for (int i = 1; i < fileContent.Count(); i++)
+                    for (int i = 0; i < fileContent.Count(); i++)
                     {
                         string[] rowData = fileContent[i].Split(',');
                         dataPreviewWindow.Rows.Add(rowData);
                     }
+                    fileNamePreviewLabel.Text = (csvFilePath.Substring(csvFilePath.LastIndexOf("\\") + 1));
                     displayPopupMessage("CSV file '" + csvFinder().Substring(csvFinder().LastIndexOf("\\")  + 1) + "' loaded successfully", "Success");
                 }
+                
                 dataGridPopulated = true;
             }
             catch
@@ -165,22 +168,21 @@ namespace SalesReportProject
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     csvFilePath = openFileDialog1.FileName;
-                    Console.WriteLine(csvFilePath);
                     //Fills array based on correct CSV file path
                     string[] fileContent = File.ReadAllLines(csvFilePath);
 
                     if (fileContent.Count() > 0)
                     {
-                        //Create data table columns
-                        string[] columns = fileContent[0].Split(',');
                         //Adds row data
-                        for (int i = 1; i < fileContent.Count(); i++)
+                        for (int i = 0; i < fileContent.Count(); i++)
                         {
                             string[] rowData = fileContent[i].Split(',');
                             dataPreviewWindow.Rows.Add(rowData);
                         }
+                        fileNamePreviewLabel.Text = (csvFilePath.Substring(csvFilePath.LastIndexOf("\\") + 1));
                         displayPopupMessage("CSV file loaded successfully", "Success");
                         dataGridPopulated = true;
+                        
                     }
                 }
             }
@@ -205,6 +207,7 @@ namespace SalesReportProject
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
+            
 
             Preview_Browse_Button.Location = new Point(ClientSize.Width - 142, 18);
 
@@ -222,7 +225,7 @@ namespace SalesReportProject
                 ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
             previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
                 dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
-            
+            fileNamePreviewLabel.Location = new Point(dataPreviewWindow.Location.X, dataPreviewWindow.Location.Y - fileNamePreviewLabel.Height - 10);
         }
 
         //this section is code that runs when menuToPreviewButtonIsClicked
@@ -542,25 +545,27 @@ namespace SalesReportProject
             // a .csv file was selected, open it.
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                dataPreviewWindow.Rows.Clear();
                 csvFilePath = openFileDialog1.FileName;
-                Console.WriteLine(csvFilePath);
                 //Fills array based on correct CSV file path
                 string[] fileContent = File.ReadAllLines(csvFilePath);
 
                 if (fileContent.Count() > 0)
                 {
-                    //Create data table columns
-                    string[] columns = fileContent[0].Split(',');
                     //Adds row data
-                    for (int i = 1; i < fileContent.Count(); i++)
+                    for (int i = 0; i < fileContent.Count(); i++)
                     {
                         string[] rowData = fileContent[i].Split(',');
                         dataPreviewWindow.Rows.Add(rowData);
                     }
+                    fileNamePreviewLabel.Text = (csvFilePath.Substring(csvFilePath.LastIndexOf("\\") + 1));
                     displayPopupMessage("CSV file loaded successfully", "Success");
                     dataGridPopulated = true;
+                    
                 }
             }
         }
+
+
     }     
 }
