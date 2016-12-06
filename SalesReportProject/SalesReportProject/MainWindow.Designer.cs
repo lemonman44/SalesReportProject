@@ -438,7 +438,7 @@
             this.settingsPage.Controls.Add(this.label1);
             this.settingsPage.Controls.Add(this.Settings_Back_Button);
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
-            this.settingsPage.Controls.Add(this.accountSettingsInfo);
+            //this.settingsPage.Controls.Add(this.accountSettingsInfo);
             this.settingsPage.Controls.Add(this.settingsLabel);
             this.settingsPage.Location = new System.Drawing.Point(744, 513);
             this.settingsPage.Margin = new System.Windows.Forms.Padding(2);

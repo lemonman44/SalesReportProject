@@ -85,6 +85,7 @@ namespace SalesReportProject
             //and looking like they're in thoughtout out locations on the settingsPage panel
             emailSettingsInfo.Width = ClientSize.Width;
             emailSettingsButton.Width = ClientSize.Width;
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
 
