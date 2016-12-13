@@ -84,13 +84,14 @@
             this.emailSettingsButton = new System.Windows.Forms.Button();
             this.emailPasswordLabel = new System.Windows.Forms.Label();
             this.emailAddressLabel = new System.Windows.Forms.Label();
+            this.settingsLabel = new System.Windows.Forms.Label();
             this.accountSettingsInfo = new System.Windows.Forms.Panel();
             this.subtractAccountsButton = new System.Windows.Forms.Button();
             this.addAccountTextField = new System.Windows.Forms.TextBox();
             this.addAccountsButton = new System.Windows.Forms.Button();
             this.accountDisplayBox = new System.Windows.Forms.CheckedListBox();
             this.accountsSettingsButton = new System.Windows.Forms.Button();
-            this.settingsLabel = new System.Windows.Forms.Label();
+            this.exportButton = new System.Windows.Forms.Button();
             this.menuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewAndSendDataPage.SuspendLayout();
@@ -104,6 +105,7 @@
             // menuPage
             // 
             this.menuPage.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.menuPage.Controls.Add(this.exportButton);
             this.menuPage.Controls.Add(this.pictureBox1);
             this.menuPage.Controls.Add(this.menuToSettingsButton);
             this.menuPage.Controls.Add(this.menuToPreviewButton);
@@ -438,7 +440,6 @@
             this.settingsPage.Controls.Add(this.label1);
             this.settingsPage.Controls.Add(this.Settings_Back_Button);
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
-            //this.settingsPage.Controls.Add(this.accountSettingsInfo);
             this.settingsPage.Controls.Add(this.settingsLabel);
             this.settingsPage.Location = new System.Drawing.Point(744, 513);
             this.settingsPage.Margin = new System.Windows.Forms.Padding(2);
@@ -609,6 +610,15 @@
             this.emailAddressLabel.TabIndex = 8;
             this.emailAddressLabel.Text = "From Email Address:";
             // 
+            // settingsLabel
+            // 
+            this.settingsLabel.AutoSize = true;
+            this.settingsLabel.Location = new System.Drawing.Point(225, 0);
+            this.settingsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.settingsLabel.Name = "settingsLabel";
+            this.settingsLabel.Size = new System.Drawing.Size(0, 13);
+            this.settingsLabel.TabIndex = 2;
+            // 
             // accountSettingsInfo
             // 
             this.accountSettingsInfo.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -689,20 +699,21 @@
             this.accountsSettingsButton.UseVisualStyleBackColor = false;
             this.accountsSettingsButton.Click += new System.EventHandler(this.accountsSettingsButton_Click);
             // 
-            // settingsLabel
+            // exportButton
             // 
-            this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Location = new System.Drawing.Point(225, 0);
-            this.settingsLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(0, 13);
-            this.settingsLabel.TabIndex = 2;
+            this.exportButton.Location = new System.Drawing.Point(126, 456);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(75, 23);
+            this.exportButton.TabIndex = 3;
+            this.exportButton.Text = "Export CSV";
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 629);
+            this.ClientSize = new System.Drawing.Size(684, 412);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
@@ -795,6 +806,7 @@
         private System.Windows.Forms.Label emailSubjectLabel;
         private System.Windows.Forms.Button Preview_Browse_Button;
         private System.Windows.Forms.Label fileNamePreviewLabel;
+        private System.Windows.Forms.Button exportButton;
     }
 }
 
