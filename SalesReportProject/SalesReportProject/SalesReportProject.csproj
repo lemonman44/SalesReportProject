@@ -124,6 +124,7 @@
   <ItemGroup>
     <Content Include="Companies.txt" />
     <Content Include="Email_info.txt" />
+    <Content Include="generateReport.exe" />
     <None Include="Resources\l.jpg" />
     <None Include="Resources\.1.png" />
     <None Include="Resources\..png" />

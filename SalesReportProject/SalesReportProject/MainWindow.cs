@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -235,7 +236,9 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to preview page
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
-            
+
+            Process.Start("..\\..\\generateReport.exe");
+
             //calls to populate the dataPreviewWindow if not already populated
             if (!dataGridPopulated)
             {
