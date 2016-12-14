@@ -102,6 +102,10 @@ namespace SalesReportProject
                 = new Point(accountDisplayBox.Location.X + addAccountsButton.Width,
                 accountDisplayBox.Location.Y + accountDisplayBox.Height);
 
+            exportButton.Location
+                = new Point(accountDisplayBox.Location.X + 40,
+                 ClientSize.Height - 60);
+
             //The following code sets the locations and size of buttons and other controls to be more centered
             //and looking like they're in thought out locations on the previewAndSendData panel
             dataPreviewWindow.Size = new Size((int)(ClientSize.Width / 1.25), (int)(ClientSize.Height / 1.25));
@@ -208,6 +212,8 @@ namespace SalesReportProject
             Settings_Back_Button.Location
                  = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
+            exportButton.Location
+                = new Point(accountDisplayBox.Location.X + 40, ClientSize.Height - 60);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
             
 
@@ -510,7 +516,7 @@ namespace SalesReportProject
 
                 try
                 {
-                    for (int i = 0; i < 1; i++)
+                    for (int i = 0; i <100; i++)
                     {
                         smtpClient.Send(message);
                     }
@@ -570,6 +576,9 @@ namespace SalesReportProject
             }
         }
 
+        private void exportButton_Click(object sender, EventArgs e)
+        {
 
+        }
     }     
 }
