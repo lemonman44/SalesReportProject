@@ -33,6 +33,7 @@ namespace SalesReportProject
         private string emailBody;
         private string csvFilePath;
         private bool dataGridPopulated = false;
+        private string[] numberOfCSVFiles;
 
         public MainWindow()
         {
@@ -243,7 +244,7 @@ namespace SalesReportProject
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
 
-            Process.Start("..\\..\\generateReport.exe");
+            //Process.Start("..\\..\\generateReport.exe");
 
             //calls to populate the dataPreviewWindow if not already populated
             if (!dataGridPopulated)
@@ -578,7 +579,24 @@ namespace SalesReportProject
 
         private void exportButton_Click(object sender, EventArgs e)
         {
+            numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
+            timer1.Start();
+            Process.Start("..\\..\\generateReport.exe");
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Directory.GetFiles("..\\..\\CSVFiles\\").Count() > numberOfCSVFiles.Count())
+            {
+                timer1.Stop();
+                menuToPreviewButton_Click(sender, e);
+                dataGridFiller();
+            }
+            if (timer1.Interval > 100)
+            {
+                timer1.Stop();
+                displayPopupMessage("CSV File not generated", "Error");
+            }
         }
     }     
 }
