@@ -376,7 +376,7 @@ namespace SalesReportProject
                 }
                 catch
                 {
-                    displayPopupMessage("'Companies.txt' not found", "Error");
+                  //  displayPopupMessage("'Companies.txt' not found", "Error");
                 }
             }
             //clears the text field
@@ -416,7 +416,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayPopupMessage("'Companies.txt' not found", "Error");
+              //  displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
@@ -491,7 +491,7 @@ namespace SalesReportProject
             }
             catch
             {
-                displayPopupMessage("'Companies.txt' not found", "Error");
+               // displayPopupMessage("'Companies.txt' not found", "Error");
             }
         }
 
