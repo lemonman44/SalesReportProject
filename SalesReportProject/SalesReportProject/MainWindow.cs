@@ -120,8 +120,6 @@ namespace SalesReportProject
             previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
                 dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
             fileNamePreviewLabel.Location = new Point(dataPreviewWindow.Location.X, dataPreviewWindow.Location.Y - fileNamePreviewLabel.Height - 10);
-
-            dataPreviewWindow.DoubleBuffered(true);
         }
 
         //finds the most recently edtited/saved csv file in the folder
@@ -205,51 +203,51 @@ namespace SalesReportProject
         //this section is some code that will run whenever the size of the form is changed
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
-            //the following code keeps all the panels to be the same size as the form
-            //ClientSize is the size of the form MainWindow
-            menuPage.Size = new Size(ClientSize.Width, ClientSize.Height);
-            previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
-            settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
-
-            //the following code keeps the locations of buttons and other controls where they were
-            //relative to where they started
-            menuToPreviewButton.Location
-                = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
-            menuToSettingsButton.Location
-                = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
-            Settings_Back_Button.Location
-                 = new Point(ClientSize.Width - Settings_Back_Button.Width - 20, ClientSize.Height - 30);
-            pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
-            exportButton.Location
-                = new Point((ClientSize.Width - exportButton.Width) / 2, ClientSize.Height - 100);
-            label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
+            if (menuPage.Visible)
+            {
+                menuPage.Size = new Size(ClientSize.Width, ClientSize.Height);
+                menuToPreviewButton.Location
+                    = new Point((ClientSize.Width - menuToPreviewButton.Width) / 2, ClientSize.Height - 60);
+                menuToSettingsButton.Location
+                    = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
+                pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
+                exportButton.Location
+                    = new Point((ClientSize.Width - exportButton.Width) / 2, ClientSize.Height - 100);
+            }
+            if (previewAndSendDataPage.Visible)
+            {
+                previewAndSendDataPage.Size = new Size(ClientSize.Width, ClientSize.Height);
+                Preview_Browse_Button.Location = new Point(ClientSize.Width - 142, 18);
+                dataPreviewWindow.Size = new Size((int)(ClientSize.Width / 1.25), (int)(ClientSize.Height / 1.25));
+                dataPreviewWindow.Location = new Point(ClientSize.Width / 2 - dataPreviewWindow.Width / 2,
+                    ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
+                previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
+                    dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
+                fileNamePreviewLabel.Location = new Point(dataPreviewWindow.Location.X, dataPreviewWindow.Location.Y - fileNamePreviewLabel.Height - 10);
+            }
+            if (settingsPage.Visible)
+            {
+                settingsPage.Size = new Size(ClientSize.Width, ClientSize.Height);
+                Settings_Back_Button.Location
+                    = new Point(ClientSize.Width - Settings_Back_Button.Width - 20, ClientSize.Height - 30);
+                label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
+                emailSettingsInfo.Width = ClientSize.Width;
+                emailSettingsButton.Width = ClientSize.Width;
+                accountSettingsInfo.Width = ClientSize.Width;
+                accountsSettingsButton.Width = ClientSize.Width;
+            }
             
-
-            Preview_Browse_Button.Location = new Point(ClientSize.Width - 142, 18);
-
-            //the following code sets the locations of buttons and other controls to be more centered
-            //and looking like they're in thoughtout out locations on the settingsPage panel
-            emailSettingsInfo.Width = ClientSize.Width;
-            emailSettingsButton.Width = ClientSize.Width;
-            accountSettingsInfo.Width = ClientSize.Width;
-            accountsSettingsButton.Width = ClientSize.Width;
-
-            //The following code sets the locations of buttons and other controls to be more centered
-            //and looking like they're in thought out locations on the previewAndSendData panel
-            dataPreviewWindow.Size = new Size((int)(ClientSize.Width / 1.25), (int)(ClientSize.Height / 1.25));
-            dataPreviewWindow.Location = new Point(ClientSize.Width / 2 - dataPreviewWindow.Width / 2,
-                ClientSize.Height / 2 - dataPreviewWindow.Height / 2);
-            previewEmailInfo.Location = new Point(ClientSize.Width / 2 - previewEmailInfo.Width / 2,
-                dataPreviewWindow.Height + dataPreviewWindow.Location.Y);
-            fileNamePreviewLabel.Location = new Point(dataPreviewWindow.Location.X, dataPreviewWindow.Location.Y - fileNamePreviewLabel.Height - 10);
+            
         }
 
         //this section is code that runs when menuToPreviewButtonIsClicked
         private void menuToPreviewButton_Click(object sender, EventArgs e)
         {
+
             //the following switches the visible panel on the form from menu to preview page
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
+            MainWindow_SizeChanged(sender, e);
 
             //Process.Start("..\\..\\generateReport.exe");
 
@@ -266,6 +264,7 @@ namespace SalesReportProject
             //the following switches the visible panel on the form from menu to settings page
             menuPage.Visible = false;
             settingsPage.Visible = true;
+            MainWindow_SizeChanged(sender, e);
         }
 
         //this section is code that runs when emailSettingsButton is clicked
@@ -299,6 +298,7 @@ namespace SalesReportProject
         {
             previewAndSendDataPage.Visible = false;
             menuPage.Visible = true;
+            MainWindow_SizeChanged(sender, e);
         }
 
         //changes the currently displayed panel from settings to menu
@@ -315,6 +315,7 @@ namespace SalesReportProject
             {
                 settingsPage.Visible = false;
                 menuPage.Visible = true;
+                MainWindow_SizeChanged(sender, e);
             }
         }
         
@@ -526,7 +527,7 @@ namespace SalesReportProject
 
                 try
                 {
-                    for (int i = 0; i <100; i++)
+                    for (int i = 0; i < 1; i++)
                     {
                         smtpClient.Send(message);
                     }
@@ -535,13 +536,31 @@ namespace SalesReportProject
                 }
                 catch (Exception ex)
                 {
-                    //Error, could not send the message
-                    displayPopupMessage("Email not sent. Check internet connection and Email Account information.", "Error");
+                    if (ex.ToString().Contains("ArgumentNullException"))
+                    {
+                        displayPopupMessage("Email not sent. Message is null", "Error");
+                    }
+                    if (ex.ToString().Contains("InvalidOperationException"))
+                    {
+                        displayPopupMessage("Email not sent. Check the To and From email addresses.", "Error");
+                    }
+                    if (ex.ToString().Contains("ObjectDisposedException"))
+                    {
+                        displayPopupMessage("Email not sent. This object has been disposed.", "Error"); 
+                    }
+                    if (ex.ToString().Contains("SmtpException"))
+                    {
+                        displayPopupMessage("Email not sent. Check internet and login information.", "Error");
+                    }
+                    if (ex.ToString().Contains("SmtpFailedRecipientsException"))
+                    {
+                        displayPopupMessage("Email not sent to one or more recipients.", "Error");
+                    }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine("" + ex);
+
             }
         }
 
@@ -608,6 +627,7 @@ namespace SalesReportProject
                 }
                 if (allOrdersInstalled)
                 {
+                    //Console.WriteLine("Curse is Installed");
                     numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
                     timer1.Start();
                     Process.Start("..\\..\\generateReport.exe");

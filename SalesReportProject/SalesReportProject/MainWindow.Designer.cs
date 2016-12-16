@@ -1,4 +1,6 @@
-﻿namespace SalesReportProject
+﻿using SalesReportProject;
+
+namespace SalesReportProject
 {
     partial class MainWindow
     {
@@ -285,6 +287,7 @@
             this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
             this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
+            this.dataPreviewWindow.DoubleBuffered(true);
             this.dataPreviewWindow.ReadOnly = true;
             this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
             this.dataPreviewWindow.TabIndex = 0;
@@ -730,7 +733,6 @@
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
-            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "MainWindow";
