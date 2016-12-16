@@ -30,6 +30,7 @@ namespace SalesReportProject
 
         private string emailAddress;
         private string emailPassword;
+        private string emailHost;
         private string emailDestination;
         private string emailSubject;
         private string emailBody;
@@ -90,7 +91,7 @@ namespace SalesReportProject
             //and looking like they're in thoughtout out locations on the settingsPage panel
             emailSettingsInfo.Width = ClientSize.Width;
             emailSettingsButton.Width = ClientSize.Width;
-            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 90);
             accountSettingsInfo.Width = ClientSize.Width;
             accountsSettingsButton.Width = ClientSize.Width;
 
@@ -277,7 +278,7 @@ namespace SalesReportProject
             //moves the other locations to where they need to be
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 52);
             accountSettingsInfo.Location = new Point(0, 208 + 104 + 80);
-            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
+            emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 90);
         }
 
         //this section is code that runs when accountSettingsButton is clicked (this code is not currently used)
@@ -327,7 +328,8 @@ namespace SalesReportProject
 
                 displayPopupMessage("Required field left blank", "Error");
 
-            } else
+            }
+            else
             {
                try
                 {
@@ -335,6 +337,7 @@ namespace SalesReportProject
                     {
                         saveNewEmailData.WriteLine(emailAddressField.Text);
                         saveNewEmailData.WriteLine(emailPasswordField.Text);
+                        saveNewEmailData.WriteLine(emailHostField.Text);
                         saveNewEmailData.WriteLine(destinationAddressField.Text);
                         saveNewEmailData.WriteLine(emailSubjectField.Text);
                         saveNewEmailData.Write(emailBodyField.Text);
@@ -439,17 +442,22 @@ namespace SalesReportProject
                         }
                         else if (i == 2)
                         {
+                            emailHost = lineInTheFile;
+                            emailHostField.Text = emailHost;
+                        }
+                        else if (i == 3)
+                        {
                             emailDestination = lineInTheFile;
                             destinationAddressField.Text = emailDestination;
                         }
-                        else if (i == 3)
+                        else if (i == 4)
                         {
                             emailSubject = lineInTheFile;
                             emailSubjectField.Text = emailSubject;
                         }
                         else
                         {
-                            if (i != 4)
+                            if (i != 5)
                             {
                                 
                                 emailBody += "\r\n";
@@ -508,7 +516,7 @@ namespace SalesReportProject
                 MailAddress fromAddress = new MailAddress(emailAddress);
                 smtpClient.EnableSsl = true;
 
-                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Host = emailHost;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = basicCredential;
 

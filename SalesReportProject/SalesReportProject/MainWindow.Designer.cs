@@ -96,6 +96,8 @@ namespace SalesReportProject
             this.accountDisplayBox = new System.Windows.Forms.CheckedListBox();
             this.accountsSettingsButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.emailHostField = new System.Windows.Forms.TextBox();
+            this.emailHostLabel = new System.Windows.Forms.Label();
             this.menuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.previewAndSendDataPage.SuspendLayout();
@@ -287,7 +289,6 @@ namespace SalesReportProject
             this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
             this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
-            this.dataPreviewWindow.DoubleBuffered(true);
             this.dataPreviewWindow.ReadOnly = true;
             this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
             this.dataPreviewWindow.TabIndex = 0;
@@ -492,6 +493,8 @@ namespace SalesReportProject
             // emailSettingsInfo
             // 
             this.emailSettingsInfo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.emailSettingsInfo.Controls.Add(this.emailHostLabel);
+            this.emailSettingsInfo.Controls.Add(this.emailHostField);
             this.emailSettingsInfo.Controls.Add(this.emailBodyField);
             this.emailSettingsInfo.Controls.Add(this.emailSubjectField);
             this.emailSettingsInfo.Controls.Add(this.emailBodyLabel);
@@ -507,14 +510,14 @@ namespace SalesReportProject
             this.emailSettingsInfo.Location = new System.Drawing.Point(0, 200);
             this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(4);
             this.emailSettingsInfo.Name = "emailSettingsInfo";
-            this.emailSettingsInfo.Size = new System.Drawing.Size(1472, 100);
+            this.emailSettingsInfo.Size = new System.Drawing.Size(1472, 700);
             this.emailSettingsInfo.TabIndex = 1;
             // 
             // emailBodyField
             // 
             this.emailBodyField.AcceptsReturn = true;
             this.emailBodyField.AcceptsTab = true;
-            this.emailBodyField.Location = new System.Drawing.Point(220, 308);
+            this.emailBodyField.Location = new System.Drawing.Point(220, 349);
             this.emailBodyField.Margin = new System.Windows.Forms.Padding(4);
             this.emailBodyField.Multiline = true;
             this.emailBodyField.Name = "emailBodyField";
@@ -523,7 +526,7 @@ namespace SalesReportProject
             // 
             // emailSubjectField
             // 
-            this.emailSubjectField.Location = new System.Drawing.Point(220, 254);
+            this.emailSubjectField.Location = new System.Drawing.Point(220, 301);
             this.emailSubjectField.Margin = new System.Windows.Forms.Padding(4);
             this.emailSubjectField.Name = "emailSubjectField";
             this.emailSubjectField.Size = new System.Drawing.Size(460, 31);
@@ -532,7 +535,7 @@ namespace SalesReportProject
             // emailBodyLabel
             // 
             this.emailBodyLabel.AutoSize = true;
-            this.emailBodyLabel.Location = new System.Drawing.Point(4, 312);
+            this.emailBodyLabel.Location = new System.Drawing.Point(4, 352);
             this.emailBodyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailBodyLabel.Name = "emailBodyLabel";
             this.emailBodyLabel.Size = new System.Drawing.Size(126, 25);
@@ -542,7 +545,7 @@ namespace SalesReportProject
             // emailSubjectLabel
             // 
             this.emailSubjectLabel.AutoSize = true;
-            this.emailSubjectLabel.Location = new System.Drawing.Point(4, 260);
+            this.emailSubjectLabel.Location = new System.Drawing.Point(4, 302);
             this.emailSubjectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailSubjectLabel.Name = "emailSubjectLabel";
             this.emailSubjectLabel.Size = new System.Drawing.Size(149, 25);
@@ -551,7 +554,7 @@ namespace SalesReportProject
             // 
             // saveEmailDataButton
             // 
-            this.saveEmailDataButton.Location = new System.Drawing.Point(8, 479);
+            this.saveEmailDataButton.Location = new System.Drawing.Point(9, 523);
             this.saveEmailDataButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveEmailDataButton.Name = "saveEmailDataButton";
             this.saveEmailDataButton.Size = new System.Drawing.Size(90, 40);
@@ -562,7 +565,7 @@ namespace SalesReportProject
             // 
             // destinationAddressField
             // 
-            this.destinationAddressField.Location = new System.Drawing.Point(220, 204);
+            this.destinationAddressField.Location = new System.Drawing.Point(220, 251);
             this.destinationAddressField.Margin = new System.Windows.Forms.Padding(4);
             this.destinationAddressField.Name = "destinationAddressField";
             this.destinationAddressField.Size = new System.Drawing.Size(460, 31);
@@ -571,7 +574,7 @@ namespace SalesReportProject
             // destinationAddressLabel
             // 
             this.destinationAddressLabel.AutoSize = true;
-            this.destinationAddressLabel.Location = new System.Drawing.Point(4, 208);
+            this.destinationAddressLabel.Location = new System.Drawing.Point(4, 254);
             this.destinationAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.destinationAddressLabel.Name = "destinationAddressLabel";
             this.destinationAddressLabel.Size = new System.Drawing.Size(211, 25);
@@ -725,11 +728,27 @@ namespace SalesReportProject
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // emailHostField
+            // 
+            this.emailHostField.Location = new System.Drawing.Point(220, 204);
+            this.emailHostField.Name = "emailHostField";
+            this.emailHostField.Size = new System.Drawing.Size(460, 31);
+            this.emailHostField.TabIndex = 16;
+            // 
+            // emailHostLabel
+            // 
+            this.emailHostLabel.AutoSize = true;
+            this.emailHostLabel.Location = new System.Drawing.Point(4, 207);
+            this.emailHostLabel.Name = "emailHostLabel";
+            this.emailHostLabel.Size = new System.Drawing.Size(121, 25);
+            this.emailHostLabel.TabIndex = 17;
+            this.emailHostLabel.Text = "Email Host:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 829);
+            this.ClientSize = new System.Drawing.Size(2724, 1767);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
@@ -823,6 +842,8 @@ namespace SalesReportProject
         private System.Windows.Forms.Label fileNamePreviewLabel;
         private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label emailHostLabel;
+        private System.Windows.Forms.TextBox emailHostField;
     }
 }
 
