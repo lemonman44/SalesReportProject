@@ -1,4 +1,6 @@
 salesreporttest@gmail.com
 supersecurepassword
+smtp.gmail.com
 null
 Snacks on Racks Sales Report
+hello there yall
