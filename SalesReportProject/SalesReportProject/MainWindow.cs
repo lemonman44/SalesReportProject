@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 
 namespace SalesReportProject
 {
@@ -34,6 +36,7 @@ namespace SalesReportProject
         private string csvFilePath;
         private bool dataGridPopulated = false;
         private string[] numberOfCSVFiles;
+        private bool allOrdersInstalled = false;
 
         public MainWindow()
         {
@@ -76,7 +79,7 @@ namespace SalesReportProject
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - 35, 5);
             Settings_Back_Button.Location
-                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+                 = new Point(ClientSize.Width - Settings_Back_Button.Width - 20, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             label1.Location = new Point(ClientSize.Width / 2 - label1.Width / 2, label1.Location.Y);
             
@@ -121,6 +124,7 @@ namespace SalesReportProject
             dataPreviewWindow.DoubleBuffered(true);
         }
 
+        //finds the most recently edtited/saved csv file in the folder
         private string csvFinder()
         {
             string[] files = Directory.GetFiles("..\\..\\CSVFiles\\");
@@ -139,6 +143,7 @@ namespace SalesReportProject
             return csvFilePath;
         }
 
+        //fills the preview data grid thing
         private void dataGridFiller() {
             String[] dataArray = new String[27];
             try
@@ -213,7 +218,7 @@ namespace SalesReportProject
             menuToSettingsButton.Location
                 = new Point(ClientSize.Width - menuToSettingsButton.Width, 0);
             Settings_Back_Button.Location
-                 = new Point(ClientSize.Width - 180, ClientSize.Height - 30);
+                 = new Point(ClientSize.Width - Settings_Back_Button.Width - 20, ClientSize.Height - 30);
             pictureBox1.Location = new Point(ClientSize.Width / 2 - pictureBox1.Width / 2, pictureBox1.Location.Y);
             exportButton.Location
                 = new Point((ClientSize.Width - exportButton.Width) / 2, ClientSize.Height - 100);
@@ -276,6 +281,7 @@ namespace SalesReportProject
             emailSettingsInfo.Size = new Size(emailSettingsInfo.Width, 104 + 104 + 80);
         }
 
+        //this section is code that runs when accountSettingsButton is clicked (this code is not currently used)
         private void accountsSettingsButton_Click(object sender, EventArgs e)
         {
             //makes sure you dont click on a thing twice
@@ -288,6 +294,7 @@ namespace SalesReportProject
             accountSettingsInfo.Size = new Size(accountSettingsInfo.Width, 104 + 104);
         }
 
+        //this section is code that runs when Preview_Back_Button is clicked
         private void Preview_Back_Button_Click(object sender, EventArgs e)
         {
             previewAndSendDataPage.Visible = false;
@@ -538,6 +545,7 @@ namespace SalesReportProject
             }
         }
 
+        //code for throwing errors to the user
         private void displayPopupMessage(string errorMessage, string windowTitle)
         {
             ErrorPopup error = new ErrorPopup();
@@ -581,9 +589,35 @@ namespace SalesReportProject
 
         private void exportButton_Click(object sender, EventArgs e)
         {
-            numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
-            timer1.Start();
-            Process.Start("..\\..\\generateReport.exe");
+            string registry_key = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(registry_key))
+            {
+                foreach (string subkey_name in key.GetSubKeyNames())
+                {
+                    using (RegistryKey subkey = key.OpenSubKey(subkey_name))
+                    {
+                        //Console.WriteLine(subkey.GetValue("DisplayName"));
+                        if (subkey.GetValue("DisplayName") != null)
+                        {
+                            if (subkey.GetValue("DisplayName").Equals("AllOrders"))
+                            {
+                                allOrdersInstalled = true;
+                            }
+                        }
+                    }
+                }
+                if (allOrdersInstalled)
+                {
+                    numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
+                    timer1.Start();
+                    Process.Start("..\\..\\generateReport.exe");
+                }
+                else
+                {
+                    displayPopupMessage("AllOrders not installed", "Error");
+                }
+                allOrdersInstalled = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

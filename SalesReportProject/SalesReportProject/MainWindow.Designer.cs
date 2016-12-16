@@ -112,7 +112,7 @@
             this.menuPage.Controls.Add(this.menuToSettingsButton);
             this.menuPage.Controls.Add(this.menuToPreviewButton);
             this.menuPage.Location = new System.Drawing.Point(4, 2);
-            this.menuPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuPage.Margin = new System.Windows.Forms.Padding(4);
             this.menuPage.Name = "menuPage";
             this.menuPage.Size = new System.Drawing.Size(1476, 983);
             this.menuPage.TabIndex = 0;
@@ -120,7 +120,7 @@
             // exportButton
             // 
             this.exportButton.Location = new System.Drawing.Point(252, 877);
-            this.exportButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.exportButton.Margin = new System.Windows.Forms.Padding(6);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(150, 44);
             this.exportButton.TabIndex = 3;
@@ -132,7 +132,7 @@
             // 
             this.pictureBox1.Image = global::SalesReportProject.Properties.Resources.l;
             this.pictureBox1.Location = new System.Drawing.Point(448, 169);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(668, 335);
             this.pictureBox1.TabIndex = 2;
@@ -142,7 +142,7 @@
             // 
             this.menuToSettingsButton.Image = global::SalesReportProject.Properties.Resources._1;
             this.menuToSettingsButton.Location = new System.Drawing.Point(1386, 4);
-            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menuToSettingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.menuToSettingsButton.Name = "menuToSettingsButton";
             this.menuToSettingsButton.Size = new System.Drawing.Size(54, 50);
             this.menuToSettingsButton.TabIndex = 1;
@@ -152,7 +152,7 @@
             // menuToPreviewButton
             // 
             this.menuToPreviewButton.Location = new System.Drawing.Point(1154, 879);
-            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuToPreviewButton.Margin = new System.Windows.Forms.Padding(2);
             this.menuToPreviewButton.Name = "menuToPreviewButton";
             this.menuToPreviewButton.Size = new System.Drawing.Size(210, 42);
             this.menuToPreviewButton.TabIndex = 0;
@@ -168,7 +168,7 @@
             this.previewAndSendDataPage.Controls.Add(this.previewEmailInfo);
             this.previewAndSendDataPage.Controls.Add(this.dataPreviewWindow);
             this.previewAndSendDataPage.Location = new System.Drawing.Point(4, 987);
-            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.previewAndSendDataPage.Margin = new System.Windows.Forms.Padding(4);
             this.previewAndSendDataPage.Name = "previewAndSendDataPage";
             this.previewAndSendDataPage.Size = new System.Drawing.Size(1476, 767);
             this.previewAndSendDataPage.TabIndex = 0;
@@ -185,7 +185,7 @@
             // Preview_Browse_Button
             // 
             this.Preview_Browse_Button.Location = new System.Drawing.Point(1290, 23);
-            this.Preview_Browse_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Preview_Browse_Button.Margin = new System.Windows.Forms.Padding(6);
             this.Preview_Browse_Button.Name = "Preview_Browse_Button";
             this.Preview_Browse_Button.Size = new System.Drawing.Size(150, 44);
             this.Preview_Browse_Button.TabIndex = 2;
@@ -201,7 +201,7 @@
             this.previewEmailInfo.Controls.Add(this.previewToAddress);
             this.previewEmailInfo.Controls.Add(this.Preview_Back_Button);
             this.previewEmailInfo.Location = new System.Drawing.Point(210, 35);
-            this.previewEmailInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.previewEmailInfo.Margin = new System.Windows.Forms.Padding(4);
             this.previewEmailInfo.Name = "previewEmailInfo";
             this.previewEmailInfo.Size = new System.Drawing.Size(1000, 62);
             this.previewEmailInfo.TabIndex = 1;
@@ -209,7 +209,7 @@
             // sendEmailButton
             // 
             this.sendEmailButton.Location = new System.Drawing.Point(140, 8);
-            this.sendEmailButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sendEmailButton.Margin = new System.Windows.Forms.Padding(4);
             this.sendEmailButton.Name = "sendEmailButton";
             this.sendEmailButton.Size = new System.Drawing.Size(160, 50);
             this.sendEmailButton.TabIndex = 2;
@@ -240,7 +240,7 @@
             // Preview_Back_Button
             // 
             this.Preview_Back_Button.Location = new System.Drawing.Point(670, 8);
-            this.Preview_Back_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Preview_Back_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Preview_Back_Button.Name = "Preview_Back_Button";
             this.Preview_Back_Button.Size = new System.Drawing.Size(160, 50);
             this.Preview_Back_Button.TabIndex = 2;
@@ -283,7 +283,7 @@
             this.Substitution_Indicator,
             this.GTIN});
             this.dataPreviewWindow.Location = new System.Drawing.Point(116, 92);
-            this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataPreviewWindow.Margin = new System.Windows.Forms.Padding(6);
             this.dataPreviewWindow.Name = "dataPreviewWindow";
             this.dataPreviewWindow.ReadOnly = true;
             this.dataPreviewWindow.Size = new System.Drawing.Size(1000, 700);
@@ -459,7 +459,7 @@
             this.settingsPage.Controls.Add(this.emailSettingsInfo);
             this.settingsPage.Controls.Add(this.settingsLabel);
             this.settingsPage.Location = new System.Drawing.Point(1488, 987);
-            this.settingsPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.settingsPage.Margin = new System.Windows.Forms.Padding(4);
             this.settingsPage.Name = "settingsPage";
             this.settingsPage.Size = new System.Drawing.Size(1476, 767);
             this.settingsPage.TabIndex = 0;
@@ -478,7 +478,7 @@
             // Settings_Back_Button
             // 
             this.Settings_Back_Button.Location = new System.Drawing.Point(0, 0);
-            this.Settings_Back_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Settings_Back_Button.Margin = new System.Windows.Forms.Padding(6);
             this.Settings_Back_Button.Name = "Settings_Back_Button";
             this.Settings_Back_Button.Size = new System.Drawing.Size(150, 44);
             this.Settings_Back_Button.TabIndex = 4;
@@ -502,7 +502,7 @@
             this.emailSettingsInfo.Controls.Add(this.emailPasswordLabel);
             this.emailSettingsInfo.Controls.Add(this.emailAddressLabel);
             this.emailSettingsInfo.Location = new System.Drawing.Point(0, 200);
-            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailSettingsInfo.Margin = new System.Windows.Forms.Padding(4);
             this.emailSettingsInfo.Name = "emailSettingsInfo";
             this.emailSettingsInfo.Size = new System.Drawing.Size(1472, 100);
             this.emailSettingsInfo.TabIndex = 1;
@@ -512,7 +512,7 @@
             this.emailBodyField.AcceptsReturn = true;
             this.emailBodyField.AcceptsTab = true;
             this.emailBodyField.Location = new System.Drawing.Point(220, 308);
-            this.emailBodyField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailBodyField.Margin = new System.Windows.Forms.Padding(4);
             this.emailBodyField.Multiline = true;
             this.emailBodyField.Name = "emailBodyField";
             this.emailBodyField.Size = new System.Drawing.Size(460, 156);
@@ -521,7 +521,7 @@
             // emailSubjectField
             // 
             this.emailSubjectField.Location = new System.Drawing.Point(220, 254);
-            this.emailSubjectField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailSubjectField.Margin = new System.Windows.Forms.Padding(4);
             this.emailSubjectField.Name = "emailSubjectField";
             this.emailSubjectField.Size = new System.Drawing.Size(460, 31);
             this.emailSubjectField.TabIndex = 14;
@@ -549,7 +549,7 @@
             // saveEmailDataButton
             // 
             this.saveEmailDataButton.Location = new System.Drawing.Point(8, 479);
-            this.saveEmailDataButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveEmailDataButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveEmailDataButton.Name = "saveEmailDataButton";
             this.saveEmailDataButton.Size = new System.Drawing.Size(90, 40);
             this.saveEmailDataButton.TabIndex = 11;
@@ -560,7 +560,7 @@
             // destinationAddressField
             // 
             this.destinationAddressField.Location = new System.Drawing.Point(220, 204);
-            this.destinationAddressField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.destinationAddressField.Margin = new System.Windows.Forms.Padding(4);
             this.destinationAddressField.Name = "destinationAddressField";
             this.destinationAddressField.Size = new System.Drawing.Size(460, 31);
             this.destinationAddressField.TabIndex = 7;
@@ -578,7 +578,7 @@
             // emailAddressField
             // 
             this.emailAddressField.Location = new System.Drawing.Point(220, 104);
-            this.emailAddressField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailAddressField.Margin = new System.Windows.Forms.Padding(4);
             this.emailAddressField.Name = "emailAddressField";
             this.emailAddressField.Size = new System.Drawing.Size(460, 31);
             this.emailAddressField.TabIndex = 5;
@@ -586,7 +586,7 @@
             // emailPasswordField
             // 
             this.emailPasswordField.Location = new System.Drawing.Point(220, 152);
-            this.emailPasswordField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailPasswordField.Margin = new System.Windows.Forms.Padding(4);
             this.emailPasswordField.Name = "emailPasswordField";
             this.emailPasswordField.Size = new System.Drawing.Size(460, 31);
             this.emailPasswordField.TabIndex = 6;
@@ -601,7 +601,7 @@
             this.emailSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emailSettingsButton.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailSettingsButton.Location = new System.Drawing.Point(0, 0);
-            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailSettingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.emailSettingsButton.Name = "emailSettingsButton";
             this.emailSettingsButton.Size = new System.Drawing.Size(1472, 100);
             this.emailSettingsButton.TabIndex = 2;
@@ -726,13 +726,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1368, 792);
+            this.ClientSize = new System.Drawing.Size(1374, 829);
             this.Controls.Add(this.settingsPage);
             this.Controls.Add(this.menuPage);
             this.Controls.Add(this.previewAndSendDataPage);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1374, 800);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "MainWindow";
             this.Text = "Sales Report App";
             this.Load += new System.EventHandler(this.MainWindow_Load);
