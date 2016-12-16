@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportProject", "SalesReportProject\SalesReportProject.csproj", "{EA3811B4-C7E6-4AC4-9489-CCE54DA76512}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "sales report - snacks on racks", "sales report - snacks on racks\sales report - snacks on racks.vdproj", "{7ACBCE2E-8B8D-493D-A2D6-87DFB2C06697}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sales Report - SoR", "Sales Report - SoR\Sales Report - SoR.vdproj", "{1EC4F229-B20C-4AC1-B5F7-C6A893B95F15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,10 @@ Global
 		{EA3811B4-C7E6-4AC4-9489-CCE54DA76512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3811B4-C7E6-4AC4-9489-CCE54DA76512}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3811B4-C7E6-4AC4-9489-CCE54DA76512}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7ACBCE2E-8B8D-493D-A2D6-87DFB2C06697}.Debug|Any CPU.ActiveCfg = Debug
+		{7ACBCE2E-8B8D-493D-A2D6-87DFB2C06697}.Release|Any CPU.ActiveCfg = Release
+		{1EC4F229-B20C-4AC1-B5F7-C6A893B95F15}.Debug|Any CPU.ActiveCfg = Debug
+		{1EC4F229-B20C-4AC1-B5F7-C6A893B95F15}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
