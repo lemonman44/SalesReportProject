@@ -127,8 +127,8 @@ namespace SalesReportProject
         //finds the most recently edtited/saved csv file in the folder
         private string csvFinder()
         {
-            string[] files = Directory.GetFiles("..\\..\\CSVFiles\\");
-            var fileCount = (from file in Directory.EnumerateFiles(@"..\\..\\CSVFiles\\", "*.csv", SearchOption.AllDirectories) select file).Count();
+            string[] files = Directory.GetFiles("CSVFiles\\");
+            var fileCount = (from file in Directory.EnumerateFiles(@"CSVFiles\\", "*.csv", SearchOption.AllDirectories) select file).Count();
             string newest = files[0];
 
             for (int i = 0; i < fileCount; i ++) {
@@ -251,7 +251,7 @@ namespace SalesReportProject
             menuPage.Visible = false;
             previewAndSendDataPage.Visible = true;
 
-            //Process.Start("..\\..\\generateReport.exe");
+            //Process.Start("generateReport.exe");
 
             //calls to populate the dataPreviewWindow if not already populated
             if (!dataGridPopulated)
@@ -330,7 +330,7 @@ namespace SalesReportProject
             {
                try
                 {
-                    using (StreamWriter saveNewEmailData = new StreamWriter("..\\..\\Email_info.txt", false))
+                    using (StreamWriter saveNewEmailData = new StreamWriter("Email_info.txt", false))
                     {
                         saveNewEmailData.WriteLine(emailAddressField.Text);
                         saveNewEmailData.WriteLine(emailPasswordField.Text);
@@ -360,7 +360,7 @@ namespace SalesReportProject
             {
                 try
                 {
-                    using (StreamWriter saveNewAccount = new StreamWriter("..\\..\\Companies.txt", true))
+                    using (StreamWriter saveNewAccount = new StreamWriter("Companies.txt", true))
                     {
                         //takes the text in the field and writes it into the file
                         saveNewAccount.WriteLine(addAccountTextField.Text);
@@ -384,7 +384,7 @@ namespace SalesReportProject
             try
             {
                 //clears the file completely
-                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", false))
+                using (StreamWriter subtractAccount = new StreamWriter("Companies.txt", false))
                 {
                     subtractAccount.Write("");
                     subtractAccount.Close();
@@ -392,7 +392,7 @@ namespace SalesReportProject
                 }
 
                 //takes everything not selected in the displaybox and writes it back to the file
-                using (StreamWriter subtractAccount = new StreamWriter("..\\..\\Companies.txt", true))
+                using (StreamWriter subtractAccount = new StreamWriter("Companies.txt", true))
                 {
                     for (int i = 0; i < accountDisplayBox.Items.Count; i++)
                     {
@@ -422,7 +422,7 @@ namespace SalesReportProject
             try
             {
                 string lineInTheFile;
-                using (StreamReader readEmailInfoFile = new StreamReader("..\\..\\Email_info.txt"))
+                using (StreamReader readEmailInfoFile = new StreamReader("Email_info.txt"))
                 {
                     for (int i = 0; (lineInTheFile = readEmailInfoFile.ReadLine()) != null; i++)
                     {
@@ -472,7 +472,7 @@ namespace SalesReportProject
             {
                 accountDisplayBox.Items.Clear();
                 string lineInTheFile;
-                using (StreamReader readAccountsFile = new StreamReader("..\\..\\Companies.txt"))
+                using (StreamReader readAccountsFile = new StreamReader("Companies.txt"))
                 {
                     while ((lineInTheFile = readAccountsFile.ReadLine()) != null)
                     {
@@ -608,9 +608,9 @@ namespace SalesReportProject
                 }
                 if (allOrdersInstalled)
                 {
-                    numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
+                    numberOfCSVFiles = Directory.GetFiles("CSVFiles\\");
                     timer1.Start();
-                    Process.Start("..\\..\\generateReport.exe");
+                    Process.Start("generateReport.exe");
                 }
                 else
                 {
@@ -622,7 +622,7 @@ namespace SalesReportProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Directory.GetFiles("..\\..\\CSVFiles\\").Count() > numberOfCSVFiles.Count())
+            if (Directory.GetFiles("CSVFiles\\").Count() > numberOfCSVFiles.Count())
             {
                 timer1.Stop();
                 menuToPreviewButton_Click(sender, e);
