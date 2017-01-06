@@ -37,7 +37,7 @@ namespace SalesReportProject
         private string csvFilePath;
         private bool dataGridPopulated = false;
         private string[] numberOfCSVFiles;
-        private bool allOrdersInstalled = false;
+        private bool allOrdersInstalled = true;
 
         public MainWindow()
         {
@@ -642,7 +642,7 @@ namespace SalesReportProject
                 }
                 else
                 {
-                    displayPopupMessage("AllOrders not installed", "Error");
+                    //displayPopupMessage("AllOrders not installed", "Error");
                 }
                 allOrdersInstalled = false;
             }
