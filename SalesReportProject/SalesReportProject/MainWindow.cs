@@ -638,7 +638,14 @@ namespace SalesReportProject
                     //Console.WriteLine("Curse is Installed");
                     numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
                     timer1.Start();
-                    Process.Start("generateReport.exe");
+                    try
+                    {
+                        Process.Start("generateReport.exe");
+                    }
+                    catch
+                    {
+                        displayPopupMessage("Macro not found" , "Error");
+                    }
                 }
                 else
                 {
@@ -650,16 +657,23 @@ namespace SalesReportProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Directory.GetFiles("CSVFiles\\").Count() > numberOfCSVFiles.Count())
+            try
+            {
+                if (Directory.GetFiles("CSVFiles\\").Count() > numberOfCSVFiles.Count())
+                {
+                    timer1.Stop();
+                    menuToPreviewButton_Click(sender, e);
+                    dataGridFiller();
+                }
+                if (timer1.Interval > 100)
+                {
+                    timer1.Stop();
+                    displayPopupMessage("CSV File not generated", "Error");
+                }
+            }catch
             {
                 timer1.Stop();
-                menuToPreviewButton_Click(sender, e);
-                dataGridFiller();
-            }
-            if (timer1.Interval > 100)
-            {
-                timer1.Stop();
-                displayPopupMessage("CSV File not generated", "Error");
+                displayPopupMessage("CSV File Folder not Found", "Error");
             }
         }
     }     
