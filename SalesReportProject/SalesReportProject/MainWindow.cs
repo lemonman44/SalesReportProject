@@ -636,22 +636,30 @@ namespace SalesReportProject
                 if (allOrdersInstalled)
                 {
                     //Console.WriteLine("Curse is Installed");
-                    numberOfCSVFiles = Directory.GetFiles("..\\..\\CSVFiles\\");
-                    timer1.Start();
                     try
                     {
-                        Process.Start("generateReport.exe");
+                        numberOfCSVFiles = Directory.GetFiles("CSVFiles\\");
+                        timer1.Start();
+                        try
+                        {
+                            Process.Start("generateReport.exe");
+                        }
+                        catch
+                        {
+                            displayPopupMessage("Macro not found", "Error");
+                            timer1.Stop();
+                        }
                     }
                     catch
                     {
-                        displayPopupMessage("Macro not found" , "Error");
+                        displayPopupMessage("CSVFiles folder not found", "Error");
                     }
                 }
                 else
                 {
                     //displayPopupMessage("AllOrders not installed", "Error");
                 }
-                allOrdersInstalled = false;
+                //allOrdersInstalled = false;
             }
         }
 
@@ -670,7 +678,8 @@ namespace SalesReportProject
                     timer1.Stop();
                     displayPopupMessage("CSV File not generated", "Error");
                 }
-            }catch
+            }
+            catch
             {
                 timer1.Stop();
                 displayPopupMessage("CSV File Folder not Found", "Error");
